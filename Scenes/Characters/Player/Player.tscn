@@ -4,19 +4,22 @@
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_s44bg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0muei"]
-radius = 8.0
-height = 16.0
+radius = 3.0
+height = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_s44bg")
 speed = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -26)
 sprite_frames = ExtResource("1_hbjhj")
 animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 28)
 shape = SubResource("CapsuleShape2D_0muei")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 1.0
+target_desired_distance = 1.0
