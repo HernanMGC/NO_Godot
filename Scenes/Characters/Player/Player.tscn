@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3es2wj6w86p"]
+
+[ext_resource type="SpriteFrames" uid="uid://ds8ffljm8fn1x" path="res://Scenes/Characters/Player/Animations/SF_Player.tres" id="1_hbjhj"]
+[ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_s44bg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0muei"]
+radius = 17.0
+height = 62.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_s44bg")
+speed = 12
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_hbjhj")
+animation = &"Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 6)
+shape = SubResource("CapsuleShape2D_0muei")
