@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://nhgqrsdohibl"]
+
+[ext_resource type="Script" path="res://Scenes/Interactuables/Interactuable.gd" id="1_6ipau"]
+[ext_resource type="Texture2D" uid="uid://buv2g8xjhk0r6" path="res://Resources/Sprites/Interactuables/T_Item_TPV.png" id="2_ej25e"]
+[ext_resource type="Texture2D" uid="uid://3qqb3uiwa5nb" path="res://Developers/T_InteractuableGoToPosition.png" id="3_yf03t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52k67"]
+size = Vector2(23, 30)
+
+[node name="Interactuable" type="Area2D"]
+script = ExtResource("1_6ipau")
+relative_goto_location = Vector2(-50, 10)
+
+[node name="InteractuableSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_ej25e")
+
+[node name="LocationSprite" type="Sprite2D" parent="."]
+position = Vector2(-50, 10)
+texture = ExtResource("3_yf03t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_52k67")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

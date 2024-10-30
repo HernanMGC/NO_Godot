@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xvpmrwx4hlbj"]
+[gd_scene load_steps=6 format=3 uid="uid://xvpmrwx4hlbj"]
 
 [ext_resource type="Script" path="res://Playground/Levels/PlaygroundLevel.gd" id="1_1t2ju"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://Scenes/Characters/Player/Player.tscn" id="1_ftmy0"]
 [ext_resource type="Texture2D" uid="uid://bh2og7248is2f" path="res://Developers/T_PixelPerfectChecker.png" id="2_rwpw7"]
+[ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://Scenes/Interactuables/Interactuable.tscn" id="4_tualb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l7tab"]
 vertices = PackedVector2Array(2, 167, 1, 98, 205, 96, 306, 175, 299, 25, 214, 23)
@@ -18,11 +19,36 @@ script = ExtResource("1_1t2ju")
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("2_rwpw7")
-
-[node name="Player" parent="." instance=ExtResource("1_ftmy0")]
-position = Vector2(264, 78)
-speed = 25
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(5, 4)
+position = Vector2(8, 2)
 navigation_polygon = SubResource("NavigationPolygon_l7tab")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_ftmy0")]
+position = Vector2(269, 88)
+speed = 25
+
+[node name="Interactuable" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(158, 32)
+relative_goto_location = Vector2(100, -10)
+
+[node name="Interactuable2" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(70, 115)
+
+[node name="Interactuable3" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(154, 97)
+
+[node name="Interactuable4" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(128, 66)
+
+[node name="Interactuable5" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(108, 52)
+
+[node name="Interactuable6" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(68, 45)
+
+[node name="Interactuable7" parent="." instance=ExtResource("4_tualb")]
+position = Vector2(215, 111)
+relative_goto_location = Vector2(16, 10)
