@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh2og7248is2f"
-path="res://.godot/imported/T_PixelPerfectChecker.png-115fbba16a36ef002a2150799fcd4636.ctex"
+uid="uid://ftkvitksvn30"
+path="res://.godot/imported/ph_S_ProtoCursor.png-3e589b58119775a695f88b92548fb4ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Developers/T_PixelPerfectChecker.png"
-dest_files=["res://.godot/imported/T_PixelPerfectChecker.png-115fbba16a36ef002a2150799fcd4636.ctex"]
+source_file="res://Developers/Placeholders/Resources/Sprites/Cursors/ph_S_ProtoCursor.png"
+dest_files=["res://.godot/imported/ph_S_ProtoCursor.png-3e589b58119775a695f88b92548fb4ba.ctex"]
 
 [params]
 

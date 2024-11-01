@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5s64qqmjh25"
-path="res://.godot/imported/SSheet_Player_Walk.png-e1402d46b2791222591fb7bcce8b49e7.ctex"
+uid="uid://ntjh8jsr1ruy"
+path="res://.godot/imported/ph_S_EmptyCursor.png-9798b8ed159ddb3a8b9503287da0abb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Characters/Player/Animations/SSheet_Player_Walk.png"
-dest_files=["res://.godot/imported/SSheet_Player_Walk.png-e1402d46b2791222591fb7bcce8b49e7.ctex"]
+source_file="res://Developers/Placeholders/Resources/Sprites/Cursors/ph_S_EmptyCursor.png"
+dest_files=["res://.godot/imported/ph_S_EmptyCursor.png-9798b8ed159ddb3a8b9503287da0abb1.ctex"]
 
 [params]
 

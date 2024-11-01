@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjh8jsr1ruy"
-path="res://.godot/imported/T_EmptyCursor.png-8238f78c7330bbce0bb41914bf314421.ctex"
+uid="uid://3qqb3uiwa5nb"
+path="res://.godot/imported/ph_S_InteractuableGoToPosition.png-6d0e8d9a7470cf786967becf028f2cbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Developers/T_EmptyCursor.png"
-dest_files=["res://.godot/imported/T_EmptyCursor.png-8238f78c7330bbce0bb41914bf314421.ctex"]
+source_file="res://Developers/Placeholders/Resources/Sprites/Interactuables/ph_S_InteractuableGoToPosition.png"
+dest_files=["res://.godot/imported/ph_S_InteractuableGoToPosition.png-6d0e8d9a7470cf786967becf028f2cbb.ctex"]
 
 [params]
 

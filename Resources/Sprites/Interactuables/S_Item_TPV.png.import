@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cettdjvnhb6lh"
-path="res://.godot/imported/T_ProtoCursorRed.png-9afdb07afd197e5f202f9f47ff941226.ctex"
+uid="uid://buv2g8xjhk0r6"
+path="res://.godot/imported/S_Item_TPV.png-c049f702b7026fd694228fea9a79407c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Developers/T_ProtoCursorRed.png"
-dest_files=["res://.godot/imported/T_ProtoCursorRed.png-9afdb07afd197e5f202f9f47ff941226.ctex"]
+source_file="res://Resources/Sprites/Interactuables/S_Item_TPV.png"
+dest_files=["res://.godot/imported/S_Item_TPV.png-c049f702b7026fd694228fea9a79407c.ctex"]
 
 [params]
 

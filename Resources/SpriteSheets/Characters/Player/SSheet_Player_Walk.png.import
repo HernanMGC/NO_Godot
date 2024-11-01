@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b56cdxowr21sh"
-path="res://.godot/imported/T_Item_Book.png-7ed1a994c7150db7ad57b4c9ac397f38.ctex"
+uid="uid://c5s64qqmjh25"
+path="res://.godot/imported/SSheet_Player_Walk.png-0ecfa6adfd51ea8a46b00983a93d22a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Interactuables/T_Item_Book.png"
-dest_files=["res://.godot/imported/T_Item_Book.png-7ed1a994c7150db7ad57b4c9ac397f38.ctex"]
+source_file="res://Resources/SpriteSheets/Characters/Player/SSheet_Player_Walk.png"
+dest_files=["res://.godot/imported/SSheet_Player_Walk.png-0ecfa6adfd51ea8a46b00983a93d22a9.ctex"]
 
 [params]
 

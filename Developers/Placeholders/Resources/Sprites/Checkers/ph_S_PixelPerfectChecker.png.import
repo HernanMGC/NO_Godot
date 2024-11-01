@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmfxmgdfql1i"
-path="res://.godot/imported/SSheet_Player_Pick_Low.png-1175c2d1de92d05960b4430be493a02a.ctex"
+uid="uid://bh2og7248is2f"
+path="res://.godot/imported/ph_S_PixelPerfectChecker.png-f7fcb7a9dbf89521102a6f7a29d37765.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Characters/Player/Animations/SSheet_Player_Pick_Low.png"
-dest_files=["res://.godot/imported/SSheet_Player_Pick_Low.png-1175c2d1de92d05960b4430be493a02a.ctex"]
+source_file="res://Developers/Placeholders/Resources/Sprites/Checkers/ph_S_PixelPerfectChecker.png"
+dest_files=["res://.godot/imported/ph_S_PixelPerfectChecker.png-f7fcb7a9dbf89521102a6f7a29d37765.ctex"]
 
 [params]
 
