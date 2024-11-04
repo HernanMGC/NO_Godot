@@ -8,6 +8,7 @@ signal interaction_finished
 	set(new_relative_goto_location):
 		relative_goto_location = Vector2(floor(new_relative_goto_location.x), floor(new_relative_goto_location.y))
 		update_location_sprite()
+@export var interactions : Array[Interaction]
 		
 func update_location_sprite() -> void:
 	var location_sprite : Sprite2D = get_node_or_null("LocationSprite")
@@ -16,9 +17,14 @@ func update_location_sprite() -> void:
 		
 func _ready() -> void:
 	update_location_sprite()
+	for interaction : Interaction in interactions:
+		interaction.initialize(self)
 	
 func _on_tree_entered() -> void:
 	pass # Replace with function body.
 
 func interact() -> void:
+	for interaction : Interaction in interactions:
+		interaction.interact()
+		
 	interaction_finished.emit()

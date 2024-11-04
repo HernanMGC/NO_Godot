@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c60anojfx75w1"]
-
-[ext_resource type="Script" path="res://Scenes/Interactuables/Interaction/Interaction.gd" id="1_suid2"]
-
-[node name="Pick" type="Node"]
-script = ExtResource("1_suid2")

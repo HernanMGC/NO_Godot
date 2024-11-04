@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ttfsw1klao5"]
+
+[ext_resource type="Script" path="res://Scenes/Utils/Debug.gd" id="1_wjpx1"]
+[ext_resource type="Theme" uid="uid://pm4d3bmdldyi" path="res://Scenes/Utils/DebugLayerTheme.tres" id="2_q1qj6"]
+
+[node name="Debug" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_wjpx1")
+
+[node name="DebugLinesContainer" type="VBoxContainer" parent="."]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_q1qj6")
+
+[node name="Label" type="Label" parent="DebugLinesContainer"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+text = "This is a test"
