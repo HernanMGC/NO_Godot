@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerCharacter
 
 enum PLAYER_INTENTION_STATE {INVALID, STARTING, MOVING_TO, ONGOING, FINISHED}
 
@@ -37,6 +38,7 @@ class PlayerIntention:
 #var currentDirection : Vector2 = Vector2.ZERO
 var navigation_2d_agent : NavigationAgent2D = null
 var current_player_intention : PlayerIntention = PlayerIntention.new()
+var is_input_enabled : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +46,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
+	if (!is_input_enabled):
+		return
+		
 	if event.is_action("go_to_position"):
 		var go_to_position : Vector2 = global_position
 		var interactuable : Interactuable = null
@@ -102,3 +107,6 @@ func _physics_process(_delta: float) -> void:
 
 func _on_interaction_finished() -> void:
 	finish_player_interaction()
+
+func set_input_enable(new_input_enabled : bool) -> void:
+	is_input_enabled = new_input_enabled

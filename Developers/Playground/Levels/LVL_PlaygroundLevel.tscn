@@ -18,7 +18,7 @@ agent_radius = 1.0
 
 [sub_resource type="Resource" id="Resource_mfh80"]
 script = ExtResource("6_1folg")
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("5_vh20k")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("5_vh20k"), ExtResource("5_vh20k"), ExtResource("5_vh20k")])
 
 [sub_resource type="Resource" id="Resource_ap26f"]
 script = ExtResource("6_qwr7i")
