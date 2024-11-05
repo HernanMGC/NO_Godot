@@ -38,15 +38,18 @@ class PlayerIntention:
 #var currentDirection : Vector2 = Vector2.ZERO
 var navigation_2d_agent : NavigationAgent2D = null
 var current_player_intention : PlayerIntention = PlayerIntention.new()
-var is_input_enabled : bool = true
+var input_disabled_count : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	navigation_2d_agent = $NavigationAgent2D
 	pass # Replace with function body.
 
+func is_input_enabled() -> bool:
+	return input_disabled_count <= 0
+	
 func _input(event: InputEvent) -> void:
-	if (!is_input_enabled):
+	if (!is_input_enabled()):
 		return
 		
 	if event.is_action("go_to_position"):
@@ -73,6 +76,12 @@ func _input(event: InputEvent) -> void:
 		
 func start_player_move_to() -> void:
 	navigation_2d_agent.target_position = current_player_intention.go_to_position
+	var direction = global_position.x - navigation_2d_agent.target_position.x
+	if direction > 0:
+		$AnimatedSprite2D.scale.x = 1
+	elif direction < 0:
+		$AnimatedSprite2D.scale.x = -1
+	
 	current_player_intention.start_moving()
 	$AnimatedSprite2D.play()
 		
@@ -82,7 +91,7 @@ func start_player_interaction() -> void:
 		
 func finish_player_interaction() -> void:
 	if (current_player_intention.interactuable):
-		current_player_intention.interactuable.interaction_finished.disconnect(_on_interaction_finished)
+		current_player_intention.interactuable.all_interaction_finished.disconnect(_on_interaction_finished)
 	current_player_intention.invalidate()
 
 func _physics_process(_delta: float) -> void:
@@ -91,7 +100,7 @@ func _physics_process(_delta: float) -> void:
 			var interactuable : Interactuable = current_player_intention.get_interactuable()
 			if (interactuable):
 				DebugManager.print_debug_line(interactuable.name)
-				interactuable.interaction_finished.connect(_on_interaction_finished)
+				interactuable.all_interaction_finished.connect(_on_interaction_finished)
 				interactuable.interact()
 			
 			start_player_interaction()
@@ -109,4 +118,7 @@ func _on_interaction_finished() -> void:
 	finish_player_interaction()
 
 func set_input_enable(new_input_enabled : bool) -> void:
-	is_input_enabled = new_input_enabled
+	if new_input_enabled:
+		input_disabled_count = maxi(0, input_disabled_count - 1)
+	else:
+		input_disabled_count += 1

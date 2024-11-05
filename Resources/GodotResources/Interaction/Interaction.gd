@@ -2,6 +2,8 @@
 extends Resource
 class_name Interaction
 
+signal interaction_finished
+
 var interactuable : Interactuable = null
 
 func _init(new_interactuable = null):

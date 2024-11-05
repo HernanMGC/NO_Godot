@@ -52,7 +52,7 @@ go_to_position={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Resources/Dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Resources/Dialogues/test.dialogue", "res://Resources/Dialogues/D_NoEntry.dialogue")
 
 [rendering]
 

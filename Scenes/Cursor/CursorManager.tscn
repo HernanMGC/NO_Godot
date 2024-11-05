@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ftkvitksvn30" path="res://Developers/Placeholders/Resources/Sprites/Cursors/ph_S_ProtoCursor.png" id="3_2ajpn"]
 
 [node name="CursorManager" type="CanvasLayer"]
-layer = 10
+layer = 128
 script = ExtResource("1_lcpqc")
 empty_cursor = ExtResource("2_p67j7")
 

@@ -16,10 +16,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_q1qj6")
-
-[node name="Label" type="Label" parent="DebugLinesContainer"]
-self_modulate = Color(0, 0, 0, 1)
-texture_filter = 5
-texture_repeat = 2
-layout_mode = 2
-text = "This is a test"

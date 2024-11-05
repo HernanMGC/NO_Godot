@@ -2,14 +2,19 @@
 extends Interaction
 class_name Pick
 
-@export var pickables : Array[Pickable] 
+@export var pickables : Array[Pickable]
+@export var destroy_interactuable_on_interact : bool = true
 
 func interact() -> void:
 	DebugManager.print_debug_line("Pick.interact(): Implement function")
 	for pickable : Pickable in pickables:
 		var debugString : String = "Pickable[" + str(pickable.id) + "]: " + pickable.name + " - " + pickable.description
 		DebugManager.print_debug_line(debugString)
-	interactuable.queue_free()
+	
+	if destroy_interactuable_on_interact && interactuable:
+		interactuable.queue_free()
+		
+	interaction_finished.emit()
 	return
 	
 func are_conditions_met() -> bool:

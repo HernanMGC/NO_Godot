@@ -9,7 +9,7 @@ func interact() -> void:
 	DebugManager.print_debug_line("Dialogue.interact(): Implement function")
 	current_dialogue_index = 0
 	if dialogues.size() > 0:
-		CharacterLibFuncs.set_input_enabled(false)
+		#CharacterLibFuncs.set_input_enabled(false)
 		show_next_dialogue()
 
 func show_next_dialogue() -> void:
@@ -26,11 +26,12 @@ func has_sub_interactions() -> bool:
 	DebugManager.print_debug_line("Dialogue.has_sub_interactions(): Implement function")
 	return false
 	
-func _on_dialogue_ended(resource: DialogueResource) -> void:
+func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	DialogueManager.dialogue_ended.disconnect(_on_dialogue_ended)
 	current_dialogue_index += 1
 	
 	if current_dialogue_index < dialogues.size():
 		show_next_dialogue()
 	else:
-		CharacterLibFuncs.set_input_enabled(true)
+		interaction_finished.emit()
+		#CharacterLibFuncs.set_input_enabled(true)
