@@ -6,7 +6,7 @@ class_name Game
 var current_level : Node
 
 func _ready():
-	var scene_to_load_path : String = level_scene_path[randi_range(0, level_scene_path.size()-1)]
+	var scene_to_load_path : String = level_scene_path[0]
 	travel_to_level(scene_to_load_path)
 	pass
 
@@ -22,3 +22,4 @@ func travel_to_level(new_level_path : String):
 	var level_node_to_load : Node = level_scene_to_load.instantiate()
 	get_tree().root.add_child.call_deferred(level_node_to_load)
 	current_level = level_node_to_load
+

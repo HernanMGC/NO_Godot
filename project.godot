@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="No"
-run/main_scene="res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn"
+run/main_scene="res://Scenes/Core/Game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ CursorManager="*res://Scenes/Cursor/CursorManager.tscn"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 DebugManager="*res://Scenes/Utils/Debug.tscn"
 PlayerLibFuncs="*res://Scenes/Utils/PlayerLibFuncs.tscn"
+GameStateScene="*res://Scenes/Core/GameState.tscn"
 
 [dialogue_manager]
 

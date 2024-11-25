@@ -18,3 +18,6 @@ func _init(new_id = -1, new_sprite = null, new_name = "", new_description = ""):
 
 func get_is_valid() -> bool:
 	return is_valid
+
+func _to_string():
+	return "Pickable[" + str(id) + "]: " + name + " - " + description

@@ -1,4 +1,9 @@
 ~ this_is_a_node_title
+if GameStateScene.inventory.is_empty()
+	Nathan: inventory empty.
+else
+	Nathan: inventory NOT empty.
+	
 Narrador: Esto es un prototipo de diálogo para el juego NO.
 Narrador: Este NO es, en definitiva, un Prototipo..
 Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.

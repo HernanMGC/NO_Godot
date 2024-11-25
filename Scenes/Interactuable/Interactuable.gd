@@ -13,6 +13,7 @@ signal all_interaction_finished
 var interaction_index : int = 0
 var current_interaction : Interaction = null
 var time_to_enable_input : float = 1.0
+var marked_to_be_destroyed = false
 
 func update_location_sprite() -> void:
 	var location_sprite : Sprite2D = get_node_or_null("LocationSprite")
@@ -47,3 +48,6 @@ func _on_interaction_finished() -> void:
 		
 		await get_tree().create_timer(time_to_enable_input).timeout
 		PlayerLibFuncs.set_input_enabled(true)
+		
+		if marked_to_be_destroyed:
+			queue_free()

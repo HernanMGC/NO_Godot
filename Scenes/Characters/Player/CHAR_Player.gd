@@ -63,8 +63,8 @@ func _input(event: InputEvent) -> void:
 		if intersectedNodes:
 			if intersectedNodes[0].collider is Interactuable:
 				interactuable = intersectedNodes[0].collider
-				DebugManager.print_debug_line(str(interactuable.relative_goto_location))
-				DebugManager.print_debug_line(str(interactuable.relative_goto_location + interactuable.position))
+				#DebugManager.print_debug_line(str(interactuable.relative_goto_location))
+				#DebugManager.print_debug_line(str(interactuable.relative_goto_location + interactuable.position))
 				go_to_position = (interactuable.relative_goto_location + interactuable.position)
 
 		else:
@@ -99,7 +99,7 @@ func _physics_process(_delta: float) -> void:
 		if (navigation_2d_agent.is_navigation_finished()):
 			var interactuable : Interactuable = current_player_intention.get_interactuable()
 			if (interactuable):
-				DebugManager.print_debug_line(interactuable.name)
+				#DebugManager.print_debug_line(interactuable.name)
 				interactuable.all_interaction_finished.connect(_on_interaction_finished)
 				interactuable.interact()
 			
