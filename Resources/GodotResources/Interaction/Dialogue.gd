@@ -9,6 +9,7 @@ func interact() -> void:
 	DebugManager.print_debug_line("Dialogue.interact(): Implement function")
 	current_dialogue_index = 0
 	if dialogues.size() > 0:
+		PlayerLibFuncs.set_input_enabled(false)
 		show_next_dialogue()
 
 func show_next_dialogue() -> void:
@@ -32,4 +33,5 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	if current_dialogue_index < dialogues.size():
 		show_next_dialogue()
 	else:
+		PlayerLibFuncs.set_input_enabled(true)
 		interaction_finished.emit()

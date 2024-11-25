@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://csmlin3eq0yat"]
+[gd_scene load_steps=14 format=3 uid="uid://csmlin3eq0yat"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_5o6yt"]
 [ext_resource type="Texture2D" uid="uid://cv47dhe6xjwyb" path="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Back.png" id="2_fjj5p"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://oke068mv5jwk" path="res://Scenes/Interactuable/StartUpInteractuable.tscn" id="6_8s21l"]
 [ext_resource type="Resource" uid="uid://qgk067j41xwd" path="res://Resources/Dialogues/D_NoEntry.dialogue" id="7_g5w3q"]
 [ext_resource type="Script" path="res://Resources/GodotResources/Interaction/Dialogue.gd" id="8_6i3vf"]
+[ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://Scenes/Interactuable/Interactuable.tscn" id="9_yd4ie"]
+[ext_resource type="Script" path="res://Resources/GodotResources/Interaction/TravelMap.gd" id="10_y7r8j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lcdph"]
 vertices = PackedVector2Array(256, 171, 264, 177, 17, 177, 237, 171, 31, 161, 52, 161, 75, 142, 164, 154, 74, 141, 149, 138, 219, 152)
@@ -19,6 +21,10 @@ agent_radius = 1.0
 [sub_resource type="Resource" id="Resource_xupqq"]
 script = ExtResource("8_6i3vf")
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("7_g5w3q")])
+
+[sub_resource type="Resource" id="Resource_nbo80"]
+script = ExtResource("10_y7r8j")
+map_to_travel_path = "res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn"
 
 [node name="LVL_Dorm" type="Node" node_paths=PackedStringArray("startup_interactuables") groups=["level"]]
 script = ExtResource("1_5o6yt")
@@ -54,3 +60,8 @@ metadata/_edit_lock_ = true
 [node name="StartUpInteractuable" parent="." instance=ExtResource("6_8s21l")]
 position = Vector2(32, -28)
 interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_xupqq")])
+
+[node name="TravelMap" parent="." instance=ExtResource("9_yd4ie")]
+position = Vector2(135, 134)
+relative_goto_location = Vector2(10, 10)
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_nbo80")])
