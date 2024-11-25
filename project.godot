@@ -21,7 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 CursorManager="*res://Scenes/Cursor/CursorManager.tscn"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 DebugManager="*res://Scenes/Utils/Debug.tscn"
-CharacterLibFuncs="*res://Scenes/Utils/CharacterLibFuncs.tscn"
+PlayerLibFuncs="*res://Scenes/Utils/PlayerLibFuncs.tscn"
 
 [dialogue_manager]
 

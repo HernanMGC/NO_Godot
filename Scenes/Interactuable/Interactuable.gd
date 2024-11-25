@@ -27,7 +27,7 @@ func _ready() -> void:
 func interact() -> void:
 	interaction_index = 0
 	if interaction_index < interactions.size():
-		CharacterLibFuncs.set_input_enabled(false)
+		PlayerLibFuncs.set_input_enabled(false)
 		launch_next_interaction()
 		
 func launch_next_interaction() -> void:
@@ -46,4 +46,4 @@ func _on_interaction_finished() -> void:
 		all_interaction_finished.emit()
 		
 		await get_tree().create_timer(time_to_enable_input).timeout
-		CharacterLibFuncs.set_input_enabled(true)
+		PlayerLibFuncs.set_input_enabled(true)

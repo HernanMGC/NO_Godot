@@ -9,6 +9,7 @@ var startup_interactuables_index : int = 0
 var current_interactuable : Interactuable = null
 
 func _ready() -> void:
+	print_tree()
 	NavigationServer2D.set_debug_enabled(true)
 	launch_startup_interactuables()
 
