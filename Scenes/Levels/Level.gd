@@ -9,12 +9,13 @@ signal all_startup_interactuables_finished
 
 var startup_interactuables_index : int = 0
 var current_interactuable : Interactuable = null
+var from_level_string = ""
 
 func _ready() -> void:
-	print_tree()
 	NavigationServer2D.set_debug_enabled(true)
+	move_player()
 	launch_startup_interactuables()
-
+	
 func launch_startup_interactuables() -> void:
 	startup_interactuables_index = 0
 	if startup_interactuables_index < startup_interactuables.size():
@@ -35,11 +36,16 @@ func _on_interaction_finished() -> void:
 		current_interactuable = null
 		all_startup_interactuables_finished.emit()
 
-func setup_player(from_level_string : String):
+func setup_player(in_from_level_string : String):
+	from_level_string = in_from_level_string
+
+func move_player():
 	if from_level_string == "":
 		PlayerLibFuncs.setup_player(default_player_start)
 	else:
 		for player_start_def : PlayerStartDefinition in player_start_definitions:
 			if player_start_def.level_from_path == from_level_string:
-				PlayerLibFuncs.setup_player(default_player_start)
+				var player_start_node = get_node(player_start_def.player_start)
+				if player_start_node is PlayerStart:
+					PlayerLibFuncs.setup_player(player_start_node)
 				return

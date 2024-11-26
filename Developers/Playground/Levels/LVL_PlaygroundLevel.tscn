@@ -84,7 +84,7 @@ relative_goto_location = Vector2(16, 10)
 interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_ap26f")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
-position = Vector2(120, 140)
+position = Vector2(121, 140)
 script = ExtResource("10_ymwfs")
 
 [node name="DormPlayerStart" type="Node2D" parent="."]
