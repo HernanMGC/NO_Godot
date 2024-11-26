@@ -2,6 +2,8 @@ extends Node
 class_name  Level
 
 @export var startup_interactuables : Array[Interactuable]
+@export var player_start_definitions : Array[PlayerStartDefinition]
+@export var default_player_start : PlayerStart
 
 signal all_startup_interactuables_finished
 
@@ -32,3 +34,12 @@ func _on_interaction_finished() -> void:
 		startup_interactuables_index = 0
 		current_interactuable = null
 		all_startup_interactuables_finished.emit()
+
+func setup_player(from_level_string : String):
+	if from_level_string == "":
+		PlayerLibFuncs.setup_player(default_player_start)
+	else:
+		for player_start_def : PlayerStartDefinition in player_start_definitions:
+			if player_start_def.level_from_path == from_level_string:
+				PlayerLibFuncs.setup_player(default_player_start)
+				return

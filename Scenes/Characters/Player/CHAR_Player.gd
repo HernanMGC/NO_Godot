@@ -122,3 +122,7 @@ func set_input_enable(new_input_enabled : bool) -> void:
 		input_disabled_count = maxi(0, input_disabled_count - 1)
 	else:
 		input_disabled_count += 1
+		
+func move_to_player_start(player_start : PlayerStart):
+	if player_start:
+		global_position = player_start.global_position
