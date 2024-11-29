@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bh2og7248is2f" path="res://Developers/Placeholders/Resources/Sprites/Checkers/ph_S_PixelPerfectChecker.png" id="2_l720i"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://Scenes/Characters/Player/CHAR_Player.tscn" id="3_sfm6t"]
 [ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://Scenes/Interactuable/Interactuable.tscn" id="4_tpy8l"]
-[ext_resource type="Resource" uid="uid://ddkdlhrwvghjw" path="res://Resources/Dialogues/test.dialogue" id="5_vh20k"]
+[ext_resource type="Resource" uid="uid://ddkdlhrwvghjw" path="res://Resources/Dialogues/D_test.dialogue" id="5_vh20k"]
 [ext_resource type="Script" path="res://Resources/GodotResources/Interaction/Dialogue.gd" id="6_1folg"]
 [ext_resource type="Script" path="res://Resources/GodotResources/Interaction/Pick.gd" id="6_qwr7i"]
 [ext_resource type="Script" path="res://Resources/GodotResources/Interaction/TravelMap.gd" id="6_v010v"]
@@ -60,14 +60,14 @@ speed = 25
 [node name="TravelMap" parent="." instance=ExtResource("4_tpy8l")]
 position = Vector2(244, 49)
 relative_goto_location = Vector2(10, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_pcg2g")])
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_pcg2g")])
 
 [node name="Interactuable2" parent="." instance=ExtResource("4_tpy8l")]
 position = Vector2(70, 115)
 
 [node name="Interactuable3" parent="." instance=ExtResource("4_tpy8l")]
 position = Vector2(284, 132)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_mfh80")])
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_mfh80")])
 
 [node name="Interactuable4" parent="." instance=ExtResource("4_tpy8l")]
 position = Vector2(128, 66)
@@ -81,7 +81,7 @@ position = Vector2(68, 45)
 [node name="Interactuable7" parent="." instance=ExtResource("4_tpy8l")]
 position = Vector2(215, 111)
 relative_goto_location = Vector2(16, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_ap26f")])
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_ap26f")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
 position = Vector2(121, 140)

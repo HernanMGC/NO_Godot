@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://pm4d3bmdldyi"]
 
-[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/m3x6.ttf" id="1_154my"]
+[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/ph_Font_m3x6.ttf" id="1_154my"]
 
 [resource]
 default_base_scale = 1.0

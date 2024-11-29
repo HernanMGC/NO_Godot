@@ -68,12 +68,12 @@ metadata/_edit_lock_ = true
 
 [node name="StartUpInteractuable" parent="." instance=ExtResource("6_8s21l")]
 position = Vector2(32, -28)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_xupqq")])
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_xupqq")])
 
 [node name="TravelMap" parent="." instance=ExtResource("9_yd4ie")]
 position = Vector2(135, 134)
 relative_goto_location = Vector2(10, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/Interaction.gd")]([SubResource("Resource_nbo80")])
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_nbo80")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
 position = Vector2(77, 161)

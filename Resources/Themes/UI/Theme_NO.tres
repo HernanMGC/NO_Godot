@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://dpewmf8wtny5p"]
 
-[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/m3x6.ttf" id="1_6v65j"]
+[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/ph_Font_m3x6.ttf" id="1_6v65j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpfrc"]
 content_margin_left = 6.0

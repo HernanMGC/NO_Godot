@@ -1,3 +1,6 @@
+# Dialog Ballon Class
+# DISCLAIMER: Copied from plugin, will update inner documentation and code if
+# it is needed.
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
