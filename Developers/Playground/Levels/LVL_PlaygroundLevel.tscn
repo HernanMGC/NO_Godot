@@ -1,15 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://xvpmrwx4hlbj"]
+[gd_scene load_steps=11 format=3 uid="uid://xvpmrwx4hlbj"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_eassu"]
 [ext_resource type="Script" path="res://Resources/GodotResources/PlayerStarts/PlayerStartDefinition.gd" id="2_g6sp5"]
 [ext_resource type="Texture2D" uid="uid://bh2og7248is2f" path="res://Developers/Placeholders/Resources/Sprites/Checkers/ph_S_PixelPerfectChecker.png" id="2_l720i"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://Scenes/Characters/Player/CHAR_Player.tscn" id="3_sfm6t"]
 [ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://Scenes/Interactuable/Interactuable.tscn" id="4_tpy8l"]
-[ext_resource type="Resource" uid="uid://ddkdlhrwvghjw" path="res://Resources/Dialogues/D_test.dialogue" id="5_vh20k"]
-[ext_resource type="Script" path="res://Resources/GodotResources/Interaction/Dialogue.gd" id="6_1folg"]
-[ext_resource type="Script" path="res://Resources/GodotResources/Interaction/Pick.gd" id="6_qwr7i"]
-[ext_resource type="Script" path="res://Resources/GodotResources/Interaction/TravelMap.gd" id="6_v010v"]
-[ext_resource type="Resource" uid="uid://1pryyw21ecau" path="res://Resources/GodotResources/Pickables/Pickable_Book.tres" id="7_msbjx"]
+[ext_resource type="Resource" uid="uid://jeaufs4nk6y6" path="res://Resources/GodotResources/TravelMaps/TravelMap_Dorm.tres" id="6_fqfbs"]
+[ext_resource type="Resource" uid="uid://ce3cifde657d3" path="res://Resources/GodotResources/Pickables/Pick_Interaction_Book.tres" id="7_xocii"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/PlayerStart.gd" id="10_ymwfs"]
 
 [sub_resource type="Resource" id="Resource_5n6lj"]
@@ -23,19 +20,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 98, 2, 168, 308, 177, 300, 25, 214, 22, 206, 95)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 1.0
-
-[sub_resource type="Resource" id="Resource_pcg2g"]
-script = ExtResource("6_v010v")
-map_to_travel_path = "res://Scenes/Levels/LVL_Dorm.tscn"
-
-[sub_resource type="Resource" id="Resource_mfh80"]
-script = ExtResource("6_1folg")
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("5_vh20k"), ExtResource("5_vh20k"), ExtResource("5_vh20k")])
-
-[sub_resource type="Resource" id="Resource_ap26f"]
-script = ExtResource("6_qwr7i")
-pickables = Array[Resource("res://Resources/GodotResources/Pickables/Pickable.gd")]([ExtResource("7_msbjx")])
-destroy_interactuable_on_interact = true
 
 [node name="PlaygroundLevel" type="Node" node_paths=PackedStringArray("default_player_start")]
 script = ExtResource("1_eassu")
@@ -58,30 +42,14 @@ position = Vector2(269, 88)
 speed = 25
 
 [node name="TravelMap" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(244, 49)
-relative_goto_location = Vector2(10, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_pcg2g")])
-
-[node name="Interactuable2" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(70, 115)
-
-[node name="Interactuable3" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(284, 132)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_mfh80")])
-
-[node name="Interactuable4" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(128, 66)
-
-[node name="Interactuable5" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(108, 52)
-
-[node name="Interactuable6" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(68, 45)
+position = Vector2(157, 141)
+exp_relative_goto_location = Vector2(-29, -10)
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([ExtResource("6_fqfbs")])
 
 [node name="Interactuable7" parent="." instance=ExtResource("4_tpy8l")]
-position = Vector2(215, 111)
-relative_goto_location = Vector2(16, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([SubResource("Resource_ap26f")])
+position = Vector2(257, 57)
+exp_relative_goto_location = Vector2(10, 10)
+interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([ExtResource("7_xocii")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
 position = Vector2(121, 140)

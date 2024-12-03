@@ -19,7 +19,9 @@ func internal_interact() -> void:
 	interaction_finished.emit()
 	
 	var from_level_path : String = ""
-	var root_children = interactuable.get_tree().root.get_children()
+	var temp_tree = interactuable.get_tree()
+	var root_children = temp_tree.root.get_children()
+	#var root_children = interactuable.get_tree().root.get_children()
 	for child in root_children:
 		if child is Level:
 			from_level_path = child.scene_file_path

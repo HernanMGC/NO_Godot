@@ -7,16 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52k67"]
 size = Vector2(23, 30)
 
-[node name="Interactuable" type="Area2D"]
+[node name="Interactuable" type="Area2D" groups=["persist"]]
 script = ExtResource("1_6ipau")
-relative_goto_location = Vector2(-50, 10)
 
 [node name="InteractuableSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
 texture = ExtResource("2_ej25e")
 
 [node name="LocationSprite" type="Sprite2D" parent="."]
-position = Vector2(-50, 10)
 texture = ExtResource("3_yf03t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

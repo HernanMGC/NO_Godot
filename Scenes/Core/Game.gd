@@ -16,6 +16,18 @@ var current_level : Node
 var current_from_level_path : String = ""
 # VARIABLES - END
 
+# STATIC METHODS
+# Get current level node.
+static func get_current_level() -> Node:
+	var mainLoop = Engine.get_main_loop()
+	var sceneTree = mainLoop as SceneTree;
+	var root = sceneTree.root.get_node("Game")
+	if (root as Game):
+		return root.current_level
+	else:
+		return null
+# STATIC METHODS - END
+
 # METHODS
 # ToDo: THis needs to change once persistency is implemented to travel to the
 # last level visit according to the save slot.

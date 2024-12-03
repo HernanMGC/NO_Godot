@@ -104,9 +104,16 @@ func _input(event: InputEvent) -> void:
 	if (!is_input_enabled()):
 		return
 	
+	
+	if event.is_action("save_game"):
+		GamePersistencySystem.save_game()
+	
+	elif event.is_action("load_game"):
+		GamePersistencySystem.load_game()
+	
 	# Handles event for "go_to_position" action. 
 	# ToDo: Maybe move this to isolate function
-	if event.is_action("go_to_position"):
+	elif event.is_action("go_to_position"):
 		var go_to_position : Vector2 = global_position
 		var interactuable : Interactuable = null
 	

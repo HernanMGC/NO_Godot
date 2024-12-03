@@ -36,6 +36,8 @@ var from_level_string = ""
 # player start and launch startup interactions.
 func _ready() -> void:
 	NavigationServer2D.set_debug_enabled(true)
+	GamePersistencySystem.load_game()
+	await get_tree().process_frame
 	move_player()
 	launch_startup_interactuables()
 

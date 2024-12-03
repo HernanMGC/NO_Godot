@@ -1,61 +1,64 @@
 ~ this_is_a_node_title
-if GameStateScene.inventory.is_empty()
-	Nathan: inventory empty.
-else
-	Nathan: inventory NOT empty.
-	
-Narrador: Esto es un prototipo de diálogo para el juego NO.
-Narrador: Este NO es, en definitiva, un Prototipo..
-Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.
-- Tegucigalpa
-	...: Tegucigalpa.
-Narrador: Vale no sé si te acuerdas de aquel día
-Narrador: pero tú estabas sobadísimo 
-Narrador: y tu madre entró en el cuarto acompañada de demasiada luz 
-Narrador: para decirte que te pusieras las pilitas y salieses de la cama.
-- Salí de la cama
-	Narrador: Te derramaste como un líquido negro por el borde del catre,
-	Narrador: arrastrando contigo la ropa que llevabas anteayer.
-	Narrador: Tu madre te esperaba en la cocina.
-	Narrador: Te habló a voces por encima del sonido de la licuadora
-	Narrador: mientras trajinaba de aquí para allá:
-	Madre: HoOla bichito! Ayer se nos hizo un poco tarde otra vez, ¿eh?
-	- ¿Zumito?
-		Baba negra: ¡Buenos días! ¿Hay zumito para mí?
-		Madre: Lo siento Bichito pero este es mi smoothie especial y es suuuper amargo,
-		Madre: no te gustaría.
-		- ¿Qué?
-			Baba negra: ¿Ah, sí? ¿Y qué lleva?
-			Madre: Sobre todo preocupación y hartazgo.
-			Madre: Normalmente le echo un par de cucharadas soperas de santa paciencia,
-			Madre: pero se me está acabando a toda velocidad.
-			- ¿Oh?
-				Baba negra: Oh.
-			- ¿Borde?
-				Baba negra: Si no querías compartir tu smoothie sólo tenías que decirlo...
-		- ¿Puaj?
-			Baba negra: Todo para ti.
-		- ¿Probar?
-			Baba negra: Lo juzgaré yo mismo, trae un poco.
-	- ¿Apuntes?
-		Baba negra: Sí, estuve pasando apuntes a limpio hasta las 5 
-		Baba negra: para los parciales de la próxima semana.
-		Narrador: Tu madre emitió una carcajada que sonó como un graznido.
-		Madre: Me alegra ver que finalmente te estás aplicando con los estudios...
-		Madre: 6 años después de terminar la carrera...
-		- ¿Recórcholis?
-			Baba negra: ¡Qué me dices!
-			Baba negra: Jolines, sí que estuve enfrascado con esos apuntes.
-			Baba negra: Desde luego, el tiempo vuela cuando te diviertes
-		- ¿Pillada?
-			Baba negra: DE ACUERDO, ME HAS PILLADO.
-			Baba negra: Estuve viendo reposiciones de Telecinco
-			Baba negra: y vídeos de Jesus G Maestro hasta que se me derritieron las lentillas
-	- ¿Quién?
-		Baba negra: No sé de qué me hablas. 
-		Baba negra: Bien pensado, no tengo muy claro quién demonios es usted.
-- No salí de la cama
-	Narrador: Ah, es verdad.
-	Narrador: Estabas tan cansado que te diste la vuelta 
-	Narrador: y seguiste durmiendo para el resto de tu vida.
+Nathan: HI.
+Nathan: HI2.
+
+#if GameStateScene.inventory.is_empty()
+#	Nathan: inventory empty.
+#else
+#	Nathan: inventory NOT empty.
+##	
+#Narrador: Esto es un prototipo de diálogo para el juego NO.
+#Narrador: Este NO es, en definitiva, un Prototipo..
+#Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.
+#- Tegucigalpa
+#	...: Tegucigalpa.
+#Narrador: Vale no sé si te acuerdas de aquel día
+#Narrador: pero tú estabas sobadísimo 
+#Narrador: y tu madre entró en el cuarto acompañada de demasiada luz 
+#Narrador: para decirte que te pusieras las pilitas y salieses de la cama.
+#- Salí de la cama
+#	Narrador: Te derramaste como un líquido negro por el borde del catre,
+#	Narrador: arrastrando contigo la ropa que llevabas anteayer.
+#	Narrador: Tu madre te esperaba en la cocina.
+#	Narrador: Te habló a voces por encima del sonido de la licuadora
+#	Narrador: mientras trajinaba de aquí para allá:
+#	Madre: HoOla bichito! Ayer se nos hizo un poco tarde otra vez, ¿eh?
+#	- ¿Zumito?
+#		Baba negra: ¡Buenos días! ¿Hay zumito para mí?
+#		Madre: Lo siento Bichito pero este es mi smoothie especial y es suuuper amargo,
+#		Madre: no te gustaría.
+#		- ¿Qué?
+#			Baba negra: ¿Ah, sí? ¿Y qué lleva?
+#			Madre: Sobre todo preocupación y hartazgo.
+#			Madre: Normalmente le echo un par de cucharadas soperas de santa paciencia,
+#			Madre: pero se me está acabando a toda velocidad.
+#			- ¿Oh?
+#				Baba negra: Oh.
+#			- ¿Borde?
+#				Baba negra: Si no querías compartir tu smoothie sólo tenías que decirlo...
+#		- ¿Puaj?
+#			Baba negra: Todo para ti.
+#		- ¿Probar?
+#			Baba negra: Lo juzgaré yo mismo, trae un poco.
+#	- ¿Apuntes?
+#		Baba negra: Sí, estuve pasando apuntes a limpio hasta las 5 
+#		Baba negra: para los parciales de la próxima semana.
+#		Narrador: Tu madre emitió una carcajada que sonó como un graznido.
+#		Madre: Me alegra ver que finalmente te estás aplicando con los estudios...
+#		Madre: 6 años después de terminar la carrera...
+#		- ¿Recórcholis?
+#			Baba negra: ¡Qué me dices!
+#			Baba negra: Jolines, sí que estuve enfrascado con esos apuntes.
+#			Baba negra: Desde luego, el tiempo vuela cuando te diviertes
+#		- ¿Pillada?
+#			Baba negra: DE ACUERDO, ME HAS PILLADO.
+#			Baba negra: Estuve viendo reposiciones de Telecinco
+#			Baba negra: y vídeos de Jesus G Maestro hasta que se me derritieron las lentillas
+#	- ¿Quién?
+#		Baba negra: No sé de qué me hablas. 
+#		Baba negra: Bien pensado, no tengo muy claro quién demonios es usted.
+#- No salí de la cama
+#	Narrador: Ah, es verdad.
+#	Narrador: Estabas tan cansado que te diste la vuelta 
+#	Narrador: y seguiste durmiendo para el resto de tu vida.
 => END
