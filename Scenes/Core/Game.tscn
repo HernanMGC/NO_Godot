@@ -4,4 +4,4 @@
 
 [node name="Game" type="Node" groups=["game"]]
 script = ExtResource("1_ktmek")
-level_scene_paths = Array[String](["res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn", "res://Scenes/Levels/LVL_Dorm.tscn"])
+level_scene_paths = Array[String](["res://Scenes/UI/Menu/MainMenu.tscn", "res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn", "res://Scenes/Levels/LVL_Dorm.tscn"])

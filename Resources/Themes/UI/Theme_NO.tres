@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dpewmf8wtny5p"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dpewmf8wtny5p"]
 
 [ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/ph_Font_m3x6.ttf" id="1_6v65j"]
+[ext_resource type="StyleBox" uid="uid://bqaufb025le4o" path="res://Resources/Themes/UI/Button/PrimaryButtonStyleBox.tres" id="1_ioq3u"]
+[ext_resource type="StyleBox" uid="uid://dcq8xr52egliw" path="res://Resources/Themes/UI/Button/SecondaryButtonStyleBox.tres" id="2_80kig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpfrc"]
 content_margin_left = 6.0
@@ -39,22 +41,7 @@ content_margin_left = 6.0
 content_margin_top = 3.0
 content_margin_right = 6.0
 content_margin_bottom = 3.0
-bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7e46"]
-content_margin_left = 6.0
-content_margin_top = 3.0
-content_margin_right = 6.0
-content_margin_bottom = 3.0
-bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+bg_color = Color(0.227451, 0.227451, 0.227451, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -75,6 +62,12 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w47cs"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_6v65j")
@@ -82,9 +75,13 @@ default_font_size = 15
 Button/styles/disabled = SubResource("StyleBoxFlat_lpfrc")
 Button/styles/focus = SubResource("StyleBoxFlat_q54n7")
 Button/styles/hover = SubResource("StyleBoxFlat_fckl7")
-Button/styles/normal = SubResource("StyleBoxFlat_v7e46")
+Button/styles/normal = ExtResource("1_ioq3u")
 MarginContainer/constants/margin_bottom = 4
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 4
+NewGameButton/base_type = &"Button"
+NewGameButton/styles/normal = ExtResource("2_80kig")
 Panel/styles/panel = SubResource("StyleBoxFlat_sp13s")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_w47cs")
+VBoxContainer/constants/separation = 10

@@ -26,5 +26,5 @@ func internal_interact() -> void:
 		if child is Level:
 			from_level_path = child.scene_file_path
 	
-	PlayerLibFuncs.travel_to_level(from_level_path, map_to_travel_path)
+	PlayerLibFuncs.travel_to_level(from_level_path, map_to_travel_path, Game.get_current_load_string())
 # METHOD - END

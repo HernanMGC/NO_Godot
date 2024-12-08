@@ -4,6 +4,33 @@ extends Node
 class_name PersistencySystem
 
 # METHODS
+# Statuc get data from file method.
+func get_data_from_file(file_str) -> Dictionary:
+	var nodes_data : Dictionary = {}
+	var save_file : FileAccess
+	var json_string : String = ""
+	if FileAccess.file_exists(file_str):
+		save_file = FileAccess.open(file_str, FileAccess.READ)
+		while save_file.get_position() < save_file.get_length():
+			json_string = save_file.get_line()
+
+			# Creates the helper class to interact with JSON.
+			var json = JSON.new()
+
+			# Check if there is any error while parsing the JSON string, skip in case of failure.
+			var parse_result = json.parse(json_string)
+			if not parse_result == OK:
+				print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+				continue
+
+			# Get the data from the JSON object.
+			for jk in json.data.keys():
+				nodes_data[jk] = json.data[jk]
+
+		save_file.close()
+	
+	return nodes_data
+
 # Static save method.
 # Note: This can be called from anywhere inside the tree. This function is
 # path independent.
@@ -15,28 +42,51 @@ func save_game():
 		return
 	var current_level_name = current_level_node.name
 	
-	var save_file_str = "user://savegame.save"
-	var save_file = FileAccess.open(save_file_str, FileAccess.READ)
+	var save_file_str = "user://"+Game.get_current_load_string()+".save"
 	var nodes_data : Dictionary = {}
 	var json_string : String = ""
-	while save_file.get_position() < save_file.get_length():
-		json_string = save_file.get_line()
-
-		# Creates the helper class to interact with JSON.
-		var json = JSON.new()
-
-		# Check if there is any error while parsing the JSON string, skip in case of failure.
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
-
-		# Get the data from the JSON object.
-		for jk in json.data.keys():
-			nodes_data[jk] = json.data[jk]
-
-	save_file.close()
+	var save_file : FileAccess
 	
+	
+	
+	#if FileAccess.file_exists(save_file_str):
+		#save_file = FileAccess.open(save_file_str, FileAccess.READ)
+		#while save_file.get_position() < save_file.get_length():
+			#json_string = save_file.get_line()
+#
+			## Creates the helper class to interact with JSON.
+			#var json = JSON.new()
+#
+			## Check if there is any error while parsing the JSON string, skip in case of failure.
+			#var parse_result = json.parse(json_string)
+			#if not parse_result == OK:
+				#print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+				#continue
+#
+			## Get the data from the JSON object.
+			#for jk in json.data.keys():
+				#nodes_data[jk] = json.data[jk]
+#
+		#save_file.close()
+	nodes_data = get_data_from_file(save_file_str)
+	
+	var slotlist_file_str = "user://saveslots.save"
+	var slotlists_data : Dictionary = get_data_from_file(slotlist_file_str)
+	slotlists_data["last_slot"] = Game.get_current_load_string()
+	if !slotlists_data.has("slot_list"):
+		slotlists_data["slot_list"] = {}
+
+	if !slotlists_data["slot_list"].has(Game.get_current_load_string()):
+		slotlists_data["slot_list"][Game.get_current_load_string()] = {}
+		
+	slotlists_data["slot_list"][Game.get_current_load_string()]["last_time"] = Time.get_time_string_from_system()
+	slotlists_data["slot_list"][Game.get_current_load_string()]["current_level"] = Game.get_current_level().scene_file_path
+	
+	save_file = FileAccess.open(slotlist_file_str, FileAccess.WRITE)
+	json_string = JSON.stringify(slotlists_data)
+	save_file.store_line(json_string)
+	save_file.close()
+
 	save_file = FileAccess.open(save_file_str, FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("persist")
 	var level_node_data : Array[Dictionary] = []
@@ -71,7 +121,7 @@ func load_game():
 		return
 	var current_level_name = current_level_node.name
 		
-	var save_file_str = "user://savegame.save"
+	var save_file_str = "user://"+Game.get_current_load_string()+".save"
 	
 	if not FileAccess.file_exists(save_file_str):
 		return # Error! We don't have a save to load.

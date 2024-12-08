@@ -14,6 +14,9 @@ var current_level : Node
 
 # Current Level Resource Path the player has travel from.
 var current_from_level_path : String = ""
+
+# Current load string.
+var current_load_string : String = ""
 # VARIABLES - END
 
 # STATIC METHODS
@@ -26,6 +29,16 @@ static func get_current_level() -> Node:
 		return root.current_level
 	else:
 		return null
+
+# Get current load string.
+static func get_current_load_string() -> String:
+	var mainLoop = Engine.get_main_loop()
+	var sceneTree = mainLoop as SceneTree;
+	var root = sceneTree.root.get_node("Game")
+	if (root as Game):
+		return root.current_load_string
+	else:
+		return ""
 # STATIC METHODS - END
 
 # METHODS
@@ -34,15 +47,19 @@ static func get_current_level() -> Node:
 # OVERRIDEN TO: Do the initial travel to level.
 func _ready() -> void:
 	var scene_to_load_path : String = level_scene_paths[0]
-	travel_to_level("", scene_to_load_path)
+	travel_to_level("", scene_to_load_path, "")
+	pass
+	
+func _process(_delta : float) -> void:
 	pass
 
 # Travels to new_level. Load PackedScen for the level if its valid, unloads
 # current level if any, connects root's child_entered_tree to add_level function
 # and adds new level to root. 
-func travel_to_level(from_level_path : String, new_level_path : String) -> void:
+func travel_to_level(from_level_path : String, new_level_path : String, load_string : String) -> void:
 	var level_scene_to_load : PackedScene = load(new_level_path)
 	current_from_level_path = from_level_path
+	current_load_string = load_string
 	
 	if (!level_scene_to_load):
 		return

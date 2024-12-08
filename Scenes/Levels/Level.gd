@@ -40,6 +40,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	move_player()
 	launch_startup_interactuables()
+	
+	GamePersistencySystem.save_game()
 
 # Launches first startup interactions.
 func launch_startup_interactuables() -> void:
