@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c23bvgvtbu7em"]
 
-[ext_resource type="Script" uid="uid://dypcwivyxhi1e" path="res://Scenes/UI/Dialogues/Balloon.gd" id="1_s2gbs"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
-[ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://Resources/Themes/UI/Theme_NO.tres" id="2_nr5w8"]
-[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
+[ext_resource type="Script" uid="uid://dypcwivyxhi1e" path="res://scenes/ui/dialogues/balloon.gd" id="1_lxpid"]
+[ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="2_7xkqn"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_vepvo"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="4_rp3h3"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
-script = ExtResource("1_s2gbs")
+script = ExtResource("1_lxpid")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_nr5w8")
+theme = ExtResource("2_7xkqn")
 
 [node name="Panel" type="Panel" parent="Balloon"]
 layout_mode = 1
@@ -55,7 +55,7 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_hfvdi")]
+[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("3_vepvo")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -80,7 +80,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
-script = ExtResource("3_1j1j0")
+script = ExtResource("4_rp3h3")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2

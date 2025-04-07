@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://j1en5uoxnnr5"
-path="res://.godot/imported/S_Dorm_Walkable.png-f60e938672a6925d21f3ad9d933ae643.ctex"
+path="res://.godot/imported/s_dorm_walkable.png-879e20376ce5b2bd9f2cbd9f98ba014a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Walkable.png"
-dest_files=["res://.godot/imported/S_Dorm_Walkable.png-f60e938672a6925d21f3ad9d933ae643.ctex"]
+source_file="res://resources/sprites/backgrounds/dorm/s_dorm_walkable.png"
+dest_files=["res://.godot/imported/s_dorm_walkable.png-879e20376ce5b2bd9f2cbd9f98ba014a.ctex"]
 
 [params]
 

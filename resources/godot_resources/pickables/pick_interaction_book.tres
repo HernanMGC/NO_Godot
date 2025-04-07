@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pick" load_steps=4 format=3 uid="uid://ce3cifde657d3"]
+
+[ext_resource type="Resource" uid="uid://1pryyw21ecau" path="res://resources/godot_resources/pickables/pickable_book.tres" id="1_cx7mn"]
+[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://resources/godot_resources/pickables/pickable.gd" id="1_fgku0"]
+[ext_resource type="Script" uid="uid://8ynevcmlardc" path="res://resources/godot_resources/interaction/pick.gd" id="2_5vgfl"]
+
+[resource]
+script = ExtResource("2_5vgfl")
+pickables = Array[ExtResource("1_fgku0")]([ExtResource("1_cx7mn")])
+destroy_interactuable_on_interact = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cph80ad8dafmj"]
 
-[ext_resource type="Script" uid="uid://cq7n45pvk0034" path="res://Scenes/Core/Game.gd" id="1_ktmek"]
+[ext_resource type="Script" uid="uid://cq7n45pvk0034" path="res://scenes/core/game.gd" id="1_2bsr5"]
 
 [node name="Game" type="Node" groups=["game"]]
-script = ExtResource("1_ktmek")
-level_scene_paths = Array[String](["res://Scenes/UI/Menu/MainMenu.tscn", "res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn", "res://Scenes/Levels/LVL_Dorm.tscn"])
+script = ExtResource("1_2bsr5")
+level_scene_paths = Array[String](["res://scenes/ui/menu/main_menu.tscn", "res://developers/playground/levels/lvl_playground.tscn", "res://scenes/levels/lvl_dorm.tscn"])

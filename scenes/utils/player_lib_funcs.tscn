@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvpscu7i5k7hj"]
+
+[ext_resource type="Script" uid="uid://bpjaa74fxyr7q" path="res://scenes/utils/player_lib_funcs.gd" id="1_6hm6e"]
+
+[node name="CharacterLibFuncs" type="Node"]
+script = ExtResource("1_6hm6e")

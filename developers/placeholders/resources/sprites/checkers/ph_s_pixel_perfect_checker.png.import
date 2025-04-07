@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b56cdxowr21sh"
-path="res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"
+uid="uid://bh2og7248is2f"
+path="res://.godot/imported/ph_s_pixel_perfect_checker.png-097167b252dcb1741d218f3fcb56ee3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/interactuables/s_item_book.png"
-dest_files=["res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"]
+source_file="res://developers/placeholders/resources/sprites/checkers/ph_s_pixel_perfect_checker.png"
+dest_files=["res://.godot/imported/ph_s_pixel_perfect_checker.png-097167b252dcb1741d218f3fcb56ee3b.ctex"]
 
 [params]
 

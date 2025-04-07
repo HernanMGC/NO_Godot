@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://dpewmf8wtny5p"]
 
-[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://Developers/Placeholders/Font/ph_Font_m3x6.ttf" id="1_6v65j"]
-[ext_resource type="StyleBox" uid="uid://bqaufb025le4o" path="res://Resources/Themes/UI/Button/PrimaryButtonStyleBox.tres" id="1_ioq3u"]
-[ext_resource type="StyleBox" uid="uid://dcq8xr52egliw" path="res://Resources/Themes/UI/Button/SecondaryButtonStyleBox.tres" id="2_80kig"]
+[ext_resource type="FontFile" uid="uid://cwy482nexjoop" path="res://developers/placeholders/fonts/ph_font_m3x6.ttf" id="1_6v65j"]
+[ext_resource type="StyleBox" uid="uid://bqaufb025le4o" path="res://resources/themes/ui/button/button_style_box_primary.tres" id="1_trj4c"]
+[ext_resource type="StyleBox" uid="uid://dcq8xr52egliw" path="res://resources/themes/ui/button/button_style_box_secondary.tres" id="2_iaor8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpfrc"]
 content_margin_left = 6.0
@@ -75,13 +75,13 @@ default_font_size = 15
 Button/styles/disabled = SubResource("StyleBoxFlat_lpfrc")
 Button/styles/focus = SubResource("StyleBoxFlat_q54n7")
 Button/styles/hover = SubResource("StyleBoxFlat_fckl7")
-Button/styles/normal = ExtResource("1_ioq3u")
+Button/styles/normal = ExtResource("1_trj4c")
 MarginContainer/constants/margin_bottom = 4
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 4
 NewGameButton/base_type = &"Button"
-NewGameButton/styles/normal = ExtResource("2_80kig")
+NewGameButton/styles/normal = ExtResource("2_iaor8")
 Panel/styles/panel = SubResource("StyleBoxFlat_sp13s")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_w47cs")
 VBoxContainer/constants/separation = 10

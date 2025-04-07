@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://k1vhst21ge8w"]
-
-[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_p4xsh"]
-[ext_resource type="Resource" uid="uid://qgk067j41xwd" path="res://Resources/Dialogues/D_NoEntry.dialogue" id="1_p54cq"]
-[ext_resource type="Script" uid="uid://cdlwatljy32vr" path="res://Resources/GodotResources/Interaction/Dialogue.gd" id="2_mjs80"]
-
-[resource]
-script = ExtResource("2_mjs80")
-dialogues = Array[ExtResource("1_p4xsh")]([ExtResource("1_p54cq")])

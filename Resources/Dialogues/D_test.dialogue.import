@@ -1,14 +1,14 @@
 [remap]
 
-importer="dialogue_manager_compiler_12"
+importer="dialogue_manager_compiler_14"
 type="Resource"
 uid="uid://ddkdlhrwvghjw"
-path="res://.godot/imported/D_test.dialogue-5acfef317277c31fc67819d44c0086c2.tres"
+path="res://.godot/imported/d_test.dialogue-c1a532af7e63b721a07dba37d563760d.tres"
 
 [deps]
 
-source_file="res://Resources/Dialogues/D_test.dialogue"
-dest_files=["res://.godot/imported/D_test.dialogue-5acfef317277c31fc67819d44c0086c2.tres"]
+source_file="res://resources/dialogues/d_test.dialogue"
+dest_files=["res://.godot/imported/d_test.dialogue-c1a532af7e63b721a07dba37d563760d.tres"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b56cdxowr21sh"
-path="res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"
+uid="uid://ntjh8jsr1ruy"
+path="res://.godot/imported/ph_s_empty_cursor.png-c6d69c35b34dfec325ac5ca362cdb17a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/interactuables/s_item_book.png"
-dest_files=["res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"]
+source_file="res://developers/placeholders/resources/sprites/cursors/ph_s_empty_cursor.png"
+dest_files=["res://.godot/imported/ph_s_empty_cursor.png-c6d69c35b34dfec325ac5ca362cdb17a.ctex"]
 
 [params]
 

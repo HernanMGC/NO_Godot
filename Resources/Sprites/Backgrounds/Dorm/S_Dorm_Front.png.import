@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddnk5v7bq867q"
-path="res://.godot/imported/S_Dorm_Front.png-357508adeaedbc237d38cc5466961c24.ctex"
+path="res://.godot/imported/s_dorm_front.png-ae9a25fcd54b8a7068d74b0ee7dd3c21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Front.png"
-dest_files=["res://.godot/imported/S_Dorm_Front.png-357508adeaedbc237d38cc5466961c24.ctex"]
+source_file="res://resources/sprites/backgrounds/dorm/s_dorm_front.png"
+dest_files=["res://.godot/imported/s_dorm_front.png-ae9a25fcd54b8a7068d74b0ee7dd3c21.ctex"]
 
 [params]
 

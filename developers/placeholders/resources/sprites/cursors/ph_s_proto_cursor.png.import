@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b56cdxowr21sh"
-path="res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"
+uid="uid://ftkvitksvn30"
+path="res://.godot/imported/ph_s_proto_cursor.png-09683b4c0aeebc5c6595ee45d83af60e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/interactuables/s_item_book.png"
-dest_files=["res://.godot/imported/s_item_book.png-b964b13743cdd73fb9a82adbb9013170.ctex"]
+source_file="res://developers/placeholders/resources/sprites/cursors/ph_s_proto_cursor.png"
+dest_files=["res://.godot/imported/ph_s_proto_cursor.png-09683b4c0aeebc5c6595ee45d83af60e.ctex"]
 
 [params]
 
