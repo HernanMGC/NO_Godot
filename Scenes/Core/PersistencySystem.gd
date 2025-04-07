@@ -168,15 +168,8 @@ func load_game():
 			for i in node_data.keys():
 				if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 					continue
-				print("[", (i in new_object), "]",i, " ", node_data[i], " ", new_object.name)
 					
-				var a
-				if i == "relative_goto_location":
-					a = new_object._set(i, node_data[i])
-				else:
-					a = new_object._set(i, node_data[i])
-			
-				print("GET ", a," ", new_object.get(i))
+				new_object._set(i, node_data[i])
 			
 			# Check the node has a save function.
 			if !new_object.has_method("finish_loading"):

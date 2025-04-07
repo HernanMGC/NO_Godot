@@ -19,7 +19,7 @@ class_name Pick
 # destroy_interactuable_on_interact is set to true disables interaction, hides
 # interactuable and marks it to be destroyed.
 func internal_interact() -> void:
-	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "Pick.internal_interact(): Implement function")
+	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "Pick:internal_interact(): Implement function")
 	for pickable : Pickable in pickables:
 		DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, pickable.to_string())
 		PlayerLibFuncs.add_item_to_inventory(pickable)

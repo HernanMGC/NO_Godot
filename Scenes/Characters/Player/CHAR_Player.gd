@@ -131,8 +131,8 @@ func _input(event: InputEvent) -> void:
 		if intersectedNodes:
 			if intersectedNodes[0].collider is Interactuable:
 				interactuable = intersectedNodes[0].collider
-				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, str(interactuable.relative_goto_location))
-				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, str(interactuable.relative_goto_location + interactuable.position))
+				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "_input: interactuable position %s" % str(interactuable.relative_goto_location))
+				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "_input: interactuable player marker position %s" % str(interactuable.relative_goto_location + interactuable.position))
 				go_to_position = (interactuable.relative_goto_location + interactuable.position)
 
 		# Else gets closest point in the map and assigns it to go_to_position
@@ -158,7 +158,7 @@ func _physics_process(_delta: float) -> void:
 		if (navigation_2d_agent.is_navigation_finished()):
 			var interactuable : Interactuable = current_player_intention.get_interactuable()
 			if (interactuable):
-				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, interactuable.name)
+				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "_physics_process interactuable %s" % interactuable.name)
 				interactuable.all_interaction_finished.connect(_on_interaction_finished)
 				interactuable.interact()
 			
@@ -214,10 +214,13 @@ func _on_interaction_finished() -> void:
 
 # Adds/removes input disabling counter on input disabled/enabled.
 func set_input_enable(new_input_enabled : bool) -> void:
+	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.INFO, "ENTER CHAR_Player:set_input_enable(%s) input_disabled_count = %s" % [str(new_input_enabled), str(input_disabled_count)])
 	if new_input_enabled:
 		input_disabled_count = maxi(0, input_disabled_count - 1)
 	else:
 		input_disabled_count += 1
+	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.INFO, "LEAVE CHAR_Player:set_input_enable(%s) input_disabled_count = %s" % [str(new_input_enabled), str(input_disabled_count)])
+	
 
 # Teleports player to Player Start position.
 func move_to_player_start(player_start : PlayerStart) -> void:

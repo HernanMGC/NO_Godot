@@ -27,7 +27,7 @@ GamePersistencySystem="*res://Scenes/Core/PersistencySystem.tscn"
 
 [dialogue_manager]
 
-general/balloon_path="res://Scenes/UI/Dialogues/Balloon.tscn"
+runtime/balloon_path="res://Scenes/UI/Dialogues/Balloon.tscn"
 
 [display]
 
@@ -42,6 +42,12 @@ project/assembly_name="No"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg")
+
+[global_group]
+
+player=""
+persist=""
+level=""
 
 [input]
 

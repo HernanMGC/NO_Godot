@@ -23,12 +23,15 @@ var can_interact : bool = true
 # attached to.
 func initialize(new_interactuable: Interactuable) -> void:
 	interactuable = new_interactuable
+	can_interact = true
 	return
 
 # Base interact function. It is NOT meant to be overriden. It will call internal interact if can 
 # interact is true.
 func interact() -> void:
 	# ToDo: Change this to an implementation that considers are_conditions_met
+	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "abs_Interaction:interact(): can_interact %s" % str(can_interact))
+	
 	if can_interact:
 		internal_interact()
 	return

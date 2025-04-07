@@ -80,17 +80,22 @@ func update_location_sprite() -> void:
 func interact() -> void:
 	current_interaction_index = 0
 	if current_interaction_index < interactions.size():
+		DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "Interactuable:interact() [%s/%s] " % [str(current_interaction_index), str(interactions.size())])
 		PlayerLibFuncs.set_input_enabled(false)
 		launch_next_interaction()
 		
 # Launches next interaction using current_interaction_index and connect 
 # Interaction interaction_finished signal to _on_interaction_finished.
 func launch_next_interaction() -> void:
+	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "Interactuable:launch_next_interaction() [%s/%s] " % [str(current_interaction_index), str(interactions.size())])
+	
 	current_interaction = interactions[current_interaction_index]
 	current_interaction.interaction_finished.connect(_on_interaction_finished)
 	current_interaction.interact()
 		
 func _on_interaction_finished() -> void:
+	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "ENTER Interactuable:_on_interaction_finished() [%s/%s] " % [str(current_interaction_index), str(interactions.size())])
+	
 	current_interaction.interaction_finished.disconnect(_on_interaction_finished)
 	current_interaction_index += 1
 	if current_interaction_index < interactions.size():
@@ -105,6 +110,9 @@ func _on_interaction_finished() -> void:
 		
 		if marked_to_be_destroyed:
 			queue_free()
+	
+	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "LEAVE Interactuable:_on_interaction_finished() [%s/%s] " % [str(current_interaction_index), str(interactions.size())])
+	
 
 # Creates save serialization.
 func save() -> Dictionary:

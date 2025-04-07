@@ -16,12 +16,12 @@ class_name TravelMap
 # process. Calls for PlayerLibFuncs.travel_to_level.
 func internal_interact() -> void:
 	DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "TravelMap.internal_interact(): Implemented function")
+	GamePersistencySystem.save_game()
 	interaction_finished.emit()
 	
 	var from_level_path : String = ""
 	var temp_tree = interactuable.get_tree()
 	var root_children = temp_tree.root.get_children()
-	#var root_children = interactuable.get_tree().root.get_children()
 	for child in root_children:
 		if child is Level:
 			from_level_path = child.scene_file_path

@@ -22,7 +22,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 98, 2, 168, 308, 177
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 1.0
 
-[node name="PlaygroundLevel" type="Node" node_paths=PackedStringArray("default_player_start")]
+[node name="PlaygroundLevel" type="Node" node_paths=PackedStringArray("default_player_start") groups=["level"]]
 script = ExtResource("1_eassu")
 player_start_definitions = Array[ExtResource("2_g6sp5")]([SubResource("Resource_5n6lj")])
 default_player_start = NodePath("DefaultPlayerStart")
@@ -53,7 +53,7 @@ exp_relative_goto_location = Vector2(10, 10)
 interactions = Array[ExtResource("6_2ylwe")]([ExtResource("7_xocii")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
-position = Vector2(121, 140)
+position = Vector2(92, 139)
 script = ExtResource("10_ymwfs")
 
 [node name="DormPlayerStart" type="Node2D" parent="."]
