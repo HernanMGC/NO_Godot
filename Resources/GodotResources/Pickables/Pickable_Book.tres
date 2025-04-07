@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://1pryyw21ecau"]
 
-[ext_resource type="Script" path="res://Resources/GodotResources/Pickables/Pickable.gd" id="1_krf7i"]
+[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://Resources/GodotResources/Pickables/Pickable.gd" id="1_krf7i"]
 [ext_resource type="Texture2D" uid="uid://b56cdxowr21sh" path="res://Resources/Sprites/Interactuables/S_Item_Book.png" id="2_jlm3v"]
 
 [resource]

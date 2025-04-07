@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nhgqrsdohibl"]
 
-[ext_resource type="Script" path="res://Scenes/Interactuable/Interactuable.gd" id="1_6ipau"]
+[ext_resource type="Script" uid="uid://cep566mq1su2r" path="res://Scenes/Interactuable/Interactuable.gd" id="1_6ipau"]
 [ext_resource type="Texture2D" uid="uid://buv2g8xjhk0r6" path="res://Resources/Sprites/Interactuables/S_Item_TPV.png" id="2_ej25e"]
 [ext_resource type="Texture2D" uid="uid://3qqb3uiwa5nb" path="res://Developers/Placeholders/Resources/Sprites/Interactuables/ph_S_InteractuableGoToPosition.png" id="3_yf03t"]
 

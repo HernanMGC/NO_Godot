@@ -1,17 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://csmlin3eq0yat"]
+[gd_scene load_steps=16 format=3 uid="uid://csmlin3eq0yat"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_5o6yt"]
-[ext_resource type="Script" path="res://Resources/GodotResources/PlayerStarts/PlayerStartDefinition.gd" id="2_8vuyl"]
+[ext_resource type="Script" uid="uid://jc65hrxwmmcj" path="res://Scenes/Levels/Level.gd" id="1_5o6yt"]
+[ext_resource type="Script" uid="uid://bng36of51xalg" path="res://Resources/GodotResources/PlayerStarts/PlayerStartDefinition.gd" id="2_8vuyl"]
 [ext_resource type="Texture2D" uid="uid://cv47dhe6xjwyb" path="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Back.png" id="2_fjj5p"]
 [ext_resource type="Texture2D" uid="uid://j1en5uoxnnr5" path="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Walkable.png" id="3_6r6wv"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://Scenes/Characters/Player/CHAR_Player.tscn" id="4_77hws"]
 [ext_resource type="Texture2D" uid="uid://ddnk5v7bq867q" path="res://Resources/Sprites/Backgrounds/Dorm/S_Dorm_Front.png" id="5_g08ul"]
 [ext_resource type="PackedScene" uid="uid://oke068mv5jwk" path="res://Scenes/Interactuable/StartUpInteractuable.tscn" id="6_8s21l"]
+[ext_resource type="Script" uid="uid://c7oqhs17beknb" path="res://Resources/GodotResources/Interaction/abs_Interaction.gd" id="8_tjmna"]
 [ext_resource type="Resource" uid="uid://k1vhst21ge8w" path="res://Resources/GodotResources/Dialogues/Dialogues_Interaction_DormIntro.tres" id="8_x5bm5"]
 [ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://Scenes/Interactuable/Interactuable.tscn" id="9_yd4ie"]
 [ext_resource type="Resource" uid="uid://ds8sd8odretiu" path="res://Resources/GodotResources/TravelMaps/TravelMap_Playground.tres" id="10_wmsyw"]
 [ext_resource type="Resource" uid="uid://ce3cifde657d3" path="res://Resources/GodotResources/Pickables/Pick_Interaction_Book.tres" id="11_d7e17"]
-[ext_resource type="Script" path="res://Scenes/Characters/Player/PlayerStart.gd" id="12_pq6ly"]
+[ext_resource type="Script" uid="uid://b7gdbrqgx0ev2" path="res://Scenes/Characters/Player/PlayerStart.gd" id="12_pq6ly"]
 
 [sub_resource type="Resource" id="Resource_sexu2"]
 script = ExtResource("2_8vuyl")
@@ -60,11 +61,11 @@ metadata/_edit_lock_ = true
 
 [node name="StartUpInteractuable" parent="." instance=ExtResource("6_8s21l")]
 position = Vector2(32, -28)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([ExtResource("8_x5bm5")])
+interactions = Array[ExtResource("8_tjmna")]([ExtResource("8_x5bm5")])
 
 [node name="TravelMap" parent="." instance=ExtResource("9_yd4ie")]
 position = Vector2(135, 134)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([ExtResource("10_wmsyw")])
+interactions = Array[ExtResource("8_tjmna")]([ExtResource("10_wmsyw")])
 
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
 position = Vector2(77, 161)
@@ -77,4 +78,4 @@ script = ExtResource("12_pq6ly")
 [node name="Interactuable7" parent="." instance=ExtResource("9_yd4ie")]
 position = Vector2(90, 149)
 exp_relative_goto_location = Vector2(10, 10)
-interactions = Array[Resource("res://Resources/GodotResources/Interaction/abs_Interaction.gd")]([ExtResource("11_d7e17")])
+interactions = Array[ExtResource("8_tjmna")]([ExtResource("11_d7e17")])
