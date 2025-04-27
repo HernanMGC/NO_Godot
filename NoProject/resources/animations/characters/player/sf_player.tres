@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=43 format=3 uid="uid://ds8ffljm8fn1x"]
+[gd_resource type="SpriteFrames" load_steps=44 format=3 uid="uid://ds8ffljm8fn1x"]
 
 [ext_resource type="Texture2D" uid="uid://rmfxmgdfql1i" path="res://resources/sprite_sheets/characters/player/ssheet_player_pick_low.png" id="1_6oyqc"]
 [ext_resource type="Texture2D" uid="uid://c5s64qqmjh25" path="res://resources/sprite_sheets/characters/player/ssheet_player_walk.png" id="2_umf0c"]
+[ext_resource type="Texture2D" uid="uid://dmoux3e82i482" path="res://resources/sprite_sheets/characters/player/ssheet_player_walk_start.png" id="3_did4m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0h5d"]
 atlas = ExtResource("1_6oyqc")
@@ -170,7 +171,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_q0h5d")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -253,7 +254,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kwtay")
 }],
 "loop": true,
-"name": &"PickLow",
+"name": &"pick_low",
 "speed": 5.0
 }, {
 "frames": [{
@@ -297,6 +298,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_wsvon")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("3_did4m")
+}],
+"loop": false,
+"name": &"walk_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("3_did4m")
+}],
+"loop": false,
+"name": &"walk_stop",
 "speed": 5.0
 }]

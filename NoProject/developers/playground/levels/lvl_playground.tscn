@@ -40,7 +40,6 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_jfgjs")]
 position = Vector2(269, 88)
-speed = 25
 
 [node name="TravelMap" parent="." instance=ExtResource("5_2w4gg")]
 position = Vector2(157, 141)

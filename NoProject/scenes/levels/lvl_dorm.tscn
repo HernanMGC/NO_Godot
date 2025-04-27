@@ -46,7 +46,6 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("5_5v362")]
 position = Vector2(217, 126)
-speed = 25
 
 [node name="Front" type="TextureRect" parent="."]
 offset_right = 320.0

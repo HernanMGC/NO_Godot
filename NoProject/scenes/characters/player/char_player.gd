@@ -72,7 +72,7 @@ class PlayerIntention:
 
 # EXPORT VARIABLES
 # Player Character movement speed.
-@export var speed = 400
+@export var speed = 100
 # EXPORT VARIABLES - END
 
 # VARIABLES
@@ -157,6 +157,9 @@ func _physics_process(_delta: float) -> void:
 	if (current_player_intention.get_state() == PLAYER_INTENTION_STATE.MOVING_TO):
 		if (navigation_2d_agent.is_navigation_finished()):
 			var interactuable : Interactuable = current_player_intention.get_interactuable()
+			$AnimatedSprite2D.animation_finished.connect(_on_walk_stop_finished)
+			$AnimatedSprite2D.set_animation("walk_stop")
+			$AnimatedSprite2D.play()
 			if (interactuable):
 				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "_physics_process interactuable %s" % interactuable.name)
 				interactuable.all_interaction_finished.connect(_on_interaction_finished)
@@ -192,11 +195,23 @@ func start_player_move_to() -> void:
 	
 	# Starts movement and plays movement animation
 	current_player_intention.start_moving()
+	$AnimatedSprite2D.animation_finished.connect(_on_walk_start_finished)
+	$AnimatedSprite2D.set_animation("walk_start")
+	$AnimatedSprite2D.play()
+
+func _on_walk_start_finished():
+	$AnimatedSprite2D.animation_finished.disconnect(_on_walk_start_finished)
+	$AnimatedSprite2D.animation = "walk"
+	$AnimatedSprite2D.play()
+	
+func _on_walk_stop_finished():
+	$AnimatedSprite2D.animation_finished.disconnect(_on_walk_stop_finished)
+	$AnimatedSprite2D.animation = "idle"
 	$AnimatedSprite2D.play()
 
 # Stops sprite animation and starts interaction.
 func start_player_interaction() -> void:
-	$AnimatedSprite2D.stop()
+	#$AnimatedSprite2D.stop()
 	current_player_intention.start_interaction()
 		
 # Finishes interaction by disconnection _on_interaction_finished to current

@@ -10,12 +10,11 @@ height = 8.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_s44bg")
-speed = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -26)
 sprite_frames = ExtResource("2_p4dc2")
-animation = &"Walk"
+animation = &"walk_stop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0muei")

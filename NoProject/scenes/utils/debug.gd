@@ -20,10 +20,10 @@ enum DEBUG_LEVEL {
 
 # VARIABLES
 # Default debug level.
-var default_debug_level = DEBUG_LEVEL.VERBOSE
+var default_debug_level = DEBUG_LEVEL.ERROR
 
 # Current debug level.
-var current_debug_level = DEBUG_LEVEL.VERBOSE
+var current_debug_level = DEBUG_LEVEL.ERROR
 # VARIABLES - END
 
 # METHODS
