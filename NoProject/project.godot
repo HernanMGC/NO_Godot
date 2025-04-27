@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-CursorManager="*res://scenes/cursor/CursorManager.tscn"
+CursorManager="*res://scenes/cursor/cursor_manager.tscn"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 DebugManager="*res://scenes/utils/debug.tscn"
 PlayerLibFuncs="*res://scenes/utils/player_lib_funcs.tscn"
