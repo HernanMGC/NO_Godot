@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TravelMap" load_steps=2 format=3 uid="uid://jeaufs4nk6y6"]
+
+[ext_resource type="Script" uid="uid://4t41j7ahqhqa" path="res://godot_scripts/interactions/interaction_travel_map.gd" id="1_vlrnl"]
+
+[resource]
+script = ExtResource("1_vlrnl")
+map_to_travel_path = "res://scenes/levels/lvl_dorm.tscn"

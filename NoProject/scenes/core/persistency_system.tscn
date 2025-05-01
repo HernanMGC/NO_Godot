@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddmty3aayg51e"]
 
-[ext_resource type="Script" uid="uid://1yifd00wbkyi" path="res://scenes/core/persistency_system.gd" id="1_28u2r"]
+[ext_resource type="Script" uid="uid://1yifd00wbkyi" path="res://godot_scripts/core/persistency_system.gd" id="1_28u2r"]
 
 [node name="PersistencySystem" type="Node"]
 script = ExtResource("1_28u2r")

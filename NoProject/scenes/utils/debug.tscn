@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6ttfsw1klao5"]
 
-[ext_resource type="Script" uid="uid://bmc0mu8xx7mus" path="res://scenes/utils/debug.gd" id="1_eynqq"]
+[ext_resource type="Script" uid="uid://bmc0mu8xx7mus" path="res://godot_scripts/utils/debug.gd" id="1_eynqq"]
 [ext_resource type="Theme" uid="uid://pm4d3bmdldyi" path="res://scenes/utils/theme_debug_layer.tres" id="2_eynqq"]
 
 [node name="Debug" type="CanvasLayer"]

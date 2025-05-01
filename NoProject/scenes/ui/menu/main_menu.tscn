@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4ggbjshksdw2"]
 
 [ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="1_b6nc5"]
-[ext_resource type="Script" uid="uid://eiwfhc4baaj6" path="res://scenes/ui/menu/main_menu.gd" id="1_n3bts"]
+[ext_resource type="Script" uid="uid://eiwfhc4baaj6" path="res://godot_scripts/ui/menus/main_menu.gd" id="1_n3bts"]
 
 [node name="MainMenu" type="CenterContainer"]
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n3bts")
-new_level_path = "res://Scenes/Levels/lvl_dorm.tscn"
+new_level_path = "res://scenes/levels/lvl_dorm.tscn"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(150, 0)

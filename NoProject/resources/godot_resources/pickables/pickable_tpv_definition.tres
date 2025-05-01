@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://dx7fouhfmvhhx"]
+
+[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://godot_scripts/pickables/pickable_item_definition.gd" id="1_qj7g8"]
+[ext_resource type="Texture2D" uid="uid://buv2g8xjhk0r6" path="res://resources/sprites/interactuables/s_item_tpv.png" id="2_41401"]
+
+[resource]
+script = ExtResource("1_qj7g8")
+id = 1
+sprite = ExtResource("2_41401")
+name = "TPV"
+description = "Bipbop bipbop you are poor"
