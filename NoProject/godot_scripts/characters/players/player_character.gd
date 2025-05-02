@@ -84,7 +84,12 @@ class PlayerIntention:
 @export var speed = 100
 #endregion EXPORT VARIABLES
 
-#region PUBLIC VARIABLES
+#region ONREADY PRIVATE VARIABLES
+## Animation tree reference.
+@onready var _animation_tree : AnimationTree = $AnimationTree
+#endregion ONREADY PRIVATE VARIABLES
+
+#region PRIVATE VARIABLES
 ## Navigation 2D Agent.
 var _navigation_2d_agent : NavigationAgent2D = null
 
@@ -94,7 +99,10 @@ var _current_player_intention : PlayerIntention = PlayerIntention.new()
 ## Input disabling count. As long as this value is greater than ZERO, the Player
 ## won't be able to move.
 var _input_disabled_count : int = 0
-#endregion PUBLIC VARIABLES
+
+## Is moving state for animation.
+var _is_moving : bool = false
+#endregion PRIVATE VARIABLES
 
 #region METHODS
 #region PUBLIC METHODS
@@ -183,12 +191,14 @@ func _input(event: InputEvent) -> void:
 ##	If Player Intention has FINISHED:
 ##		· Finishes Player's Interaction
 func _physics_process(_delta: float) -> void:
+	_update_animation_tree_params()
 	if (_current_player_intention.get_state() == PLAYER_INTENTION_STATE.MOVING_TO):
 		if (_navigation_2d_agent.is_navigation_finished()):
 			var interactuable : Interactuable = _current_player_intention.get_interactuable()
-			$AnimatedSprite2D.animation_finished.connect(_on_walk_stop_finished)
-			$AnimatedSprite2D.set_animation("walk_stop")
-			$AnimatedSprite2D.play()
+			#$AnimatedSprite2D.animation_finished.connect(_on_walk_stop_finished)
+			#$AnimatedSprite2D.set_animation("walk_stop")
+			#$AnimatedSprite2D.play()
+			_is_moving = false
 			if (interactuable):
 				DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, "_physics_process interactuable %s" % interactuable.name)
 				interactuable.all_interaction_finished.connect(_on_current_interaction_finished)
@@ -205,6 +215,13 @@ func _physics_process(_delta: float) -> void:
 	if (_current_player_intention.get_state() == PLAYER_INTENTION_STATE.FINISHED):
 		_finish_player_interaction()
 
+## Internal function for updatint animation tree parameters to handle animation state machine changes.
+func _update_animation_tree_params() -> void:
+	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.ERROR, "_is_moving: %s" % [str(_is_moving)], 0.01)
+	pass
+	#if (_animation_tree):
+		#_animation_tree["parameters/conditions/is_walking"] = velocity.length() > 0.0
+
 ## Starts player movement to current Player Intention's Go To Position
 func _start_player_move_to() -> void:
 	# Gets relative Go To Position and uses it to determine sprite facing 
@@ -212,29 +229,34 @@ func _start_player_move_to() -> void:
 	_navigation_2d_agent.target_position = _current_player_intention.get_go_to_position()
 	var direction = global_position.x - _navigation_2d_agent.target_position.x
 	if direction > 0:
-		$AnimatedSprite2D.scale.x = 1
+		pass
+		#$AnimatedSprite2D.scale.x = 1
 	elif direction < 0:
-		$AnimatedSprite2D.scale.x = -1
+		pass
+		#$AnimatedSprite2D.scale.x = -1
 	
 	# Starts movement and plays movement animation
 	_current_player_intention.start_moving()
-	$AnimatedSprite2D.animation_finished.connect(_on_walk_start_finished)
-	$AnimatedSprite2D.set_animation("walk_start")
-	$AnimatedSprite2D.play()
+	_is_moving = true
+	#$AnimatedSprite2D.animation_finished.connect(_on_walk_start_finished)
+	#$AnimatedSprite2D.set_animation("walk_start")
+	#$AnimatedSprite2D.play()
 	
 func _on_walk_start_finished():
-	$AnimatedSprite2D.animation_finished.disconnect(_on_walk_start_finished)
-	$AnimatedSprite2D.animation = "walk"
-	$AnimatedSprite2D.play()
+	pass
+	#$AnimatedSprite2D.animation_finished.disconnect(_on_walk_start_finished)
+	#$AnimatedSprite2D.animation = "walk"
+	#$AnimatedSprite2D.play()
 	
 func _on_walk_stop_finished():
-	$AnimatedSprite2D.animation_finished.disconnect(_on_walk_stop_finished)
-	$AnimatedSprite2D.animation = "idle"
-	$AnimatedSprite2D.play()
+	pass
+	#$AnimatedSprite2D.animation_finished.disconnect(_on_walk_stop_finished)
+	#$AnimatedSprite2D.animation = "idle"
+	#$AnimatedSprite2D.play()
 
 ## Stops sprite animation and starts interaction.
 func _start_player_interaction() -> void:
-	#$AnimatedSprite2D.stop()
+	##$AnimatedSprite2D.stop()
 	_current_player_intention.start_interaction()
 		
 ## Finishes interaction by disconnection _on_interaction_finished to current

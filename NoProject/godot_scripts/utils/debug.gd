@@ -40,9 +40,26 @@ func print_debug_line(debug_level: DEBUG_LEVEL, debug_line : String, time_to_dis
 		var label = Label.new()
 		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		label.text = debug_line
-		label.self_modulate = color
+		label.self_modulate = _get_debug_level_color(debug_level, color) 
 		$DebugLinesContainer.add_child(label)
 		await get_tree().create_timer(time_to_dissapear).timeout
 		label.queue_free()
 #endregion PUBLIC METHODS
+
+#region PRIVATE METHODS
+## Get debug level color.
+func _get_debug_level_color(debug_level : DEBUG_LEVEL, default_color : Color = Color.GREEN) -> Color :
+	match debug_level:
+		DEBUG_LEVEL.VERBOSE:
+			return Color.VIOLET	
+		DEBUG_LEVEL.ERROR:
+			return Color.BROWN
+		DEBUG_LEVEL.WARNING:
+			return Color.ORANGE
+		DEBUG_LEVEL.WARNING:
+			return Color.CYAN	
+		
+	return default_color
+
+#endregion PRIVATE METHODS
 #endregion METHODS

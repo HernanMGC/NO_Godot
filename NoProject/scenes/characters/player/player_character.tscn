@@ -1,20 +1,223 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch3es2wj6w86p"]
+[gd_scene load_steps=20 format=3 uid="uid://ch3es2wj6w86p"]
 
 [ext_resource type="Script" uid="uid://duwqvdtmer722" path="res://godot_scripts/characters/players/player_character.gd" id="1_s44bg"]
 [ext_resource type="SpriteFrames" uid="uid://ds8ffljm8fn1x" path="res://resources/animations/characters/player/sf_player.tres" id="2_p4dc2"]
 
+[sub_resource type="Animation" id="Animation_5508y"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ajk8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk_stop"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xusps"]
+resource_name = "walk"
+length = 2.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_ecrnf"]
+resource_name = "walk_stop"
+length = 0.1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk_stop"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fevn2"]
+resource_name = "walk_start"
+length = 0.1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk_start"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xusps"]
+_data = {
+&"RESET": SubResource("Animation_ajk8a"),
+&"idle": SubResource("Animation_5508y"),
+&"walk": SubResource("Animation_xusps"),
+&"walk_start": SubResource("Animation_fevn2"),
+&"walk_stop": SubResource("Animation_ecrnf")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0muei"]
 radius = 3.0
 height = 8.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5508y"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ajk8a"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xusps"]
+animation = &"walk_start"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ecrnf"]
+animation = &"walk_stop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fevn2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pq06v"]
+advance_mode = 2
+advance_expression = "_is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x4ecf"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ucv0"]
+advance_mode = 2
+advance_expression = "_is_moving == false"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2qahw"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "true"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5508y"]
+states/Start/position = Vector2(83, 115)
+states/idle/node = SubResource("AnimationNodeAnimation_5508y")
+states/idle/position = Vector2(256, 115)
+states/walk/node = SubResource("AnimationNodeAnimation_ajk8a")
+states/walk/position = Vector2(586, 63)
+states/walk_start/node = SubResource("AnimationNodeAnimation_xusps")
+states/walk_start/position = Vector2(417, 63)
+states/walk_stop/node = SubResource("AnimationNodeAnimation_ecrnf")
+states/walk_stop/position = Vector2(745, 63)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fevn2"), "idle", "walk_start", SubResource("AnimationNodeStateMachineTransition_pq06v"), "walk_start", "walk", SubResource("AnimationNodeStateMachineTransition_x4ecf"), "walk", "walk_stop", SubResource("AnimationNodeStateMachineTransition_3ucv0"), "walk_stop", "idle", SubResource("AnimationNodeStateMachineTransition_2qahw")]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_s44bg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -26)
+position = Vector2(0, -25)
 sprite_frames = ExtResource("2_p4dc2")
 animation = &"walk_stop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_xusps")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0muei")
@@ -22,3 +225,9 @@ shape = SubResource("CapsuleShape2D_0muei")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 1.0
 target_desired_distance = 1.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+tree_root = SubResource("AnimationNodeStateMachine_5508y")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimatedSprite2D/AnimationPlayer")
