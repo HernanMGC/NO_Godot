@@ -222,6 +222,7 @@ func _update_animation_tree_params() -> void:
 	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.ERROR, "x: %s" % [str(temp_x)], 0.01)
 	#pass
 	if (_animation_tree):
+		_animation_tree["parameters/idle_bs/blend_position"] = temp_x
 		_animation_tree["parameters/walk_bs/blend_position"] = temp_x
 		_animation_tree["parameters/walk_start_bs/blend_position"] = temp_x
 		_animation_tree["parameters/walk_stop_bs/blend_position"] = temp_x
