@@ -217,9 +217,14 @@ func _physics_process(_delta: float) -> void:
 
 ## Internal function for updatint animation tree parameters to handle animation state machine changes.
 func _update_animation_tree_params() -> void:
+	var temp_x = velocity.normalized().x
 	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.ERROR, "_is_moving: %s" % [str(_is_moving)], 0.01)
-	pass
-	#if (_animation_tree):
+	DebugManager.print_debug_line(DebugLayer.DEBUG_LEVEL.ERROR, "x: %s" % [str(temp_x)], 0.01)
+	#pass
+	if (_animation_tree):
+		_animation_tree["parameters/walk_bs/blend_position"] = temp_x
+		_animation_tree["parameters/walk_start_bs/blend_position"] = temp_x
+		_animation_tree["parameters/walk_stop_bs/blend_position"] = temp_x
 		#_animation_tree["parameters/conditions/is_walking"] = velocity.length() > 0.0
 
 ## Starts player movement to current Player Intention's Go To Position
