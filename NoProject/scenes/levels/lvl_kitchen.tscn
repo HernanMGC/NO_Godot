@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfpeq68ynmtf3"]
+
+[ext_resource type="Script" uid="uid://jc65hrxwmmcj" path="res://godot_scripts/levels/level.gd" id="1_a2grq"]
+[ext_resource type="Script" uid="uid://bng36of51xalg" path="res://godot_scripts/player_starts/player_start_definition.gd" id="2_mr4tj"]
+[ext_resource type="Texture2D" uid="uid://cv47dhe6xjwyb" path="res://resources/sprites/backgrounds/dorm/s_dorm_back.png" id="3_lmnsv"]
+[ext_resource type="Texture2D" uid="uid://j1en5uoxnnr5" path="res://resources/sprites/backgrounds/dorm/s_dorm_walkable.png" id="4_wpnf2"]
+[ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://scenes/characters/player/player_character.tscn" id="5_5gkwj"]
+[ext_resource type="Texture2D" uid="uid://ddnk5v7bq867q" path="res://resources/sprites/backgrounds/dorm/s_dorm_front.png" id="6_dv3mf"]
+[ext_resource type="Script" uid="uid://b7gdbrqgx0ev2" path="res://godot_scripts/player_starts/player_start.gd" id="7_mashp"]
+
+[sub_resource type="Resource" id="Resource_sexu2"]
+script = ExtResource("2_mr4tj")
+level_from_path = "res://Developers/Playground/Levels/LVL_PlaygroundLevel.tscn"
+player_start = NodePath("PlaygroundPlayerStart")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lcdph"]
+vertices = PackedVector2Array(256, 171, 264, 177, 17, 177, 237, 171, 31, 161, 52, 161, 75, 142, 164, 154, 74, 141, 149, 138, 219, 152)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(3, 5, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(3, 7, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(30, 160, 14, 178, 267, 178, 257, 170, 238, 170, 220, 151, 164, 153, 150, 137, 74, 141, 52, 160)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 1.0
+
+[node name="LVL_Kitchen" type="Node" node_paths=PackedStringArray("default_player_start") groups=["level"]]
+script = ExtResource("1_a2grq")
+player_start_definitions = Array[ExtResource("2_mr4tj")]([SubResource("Resource_sexu2")])
+default_player_start = NodePath("DefaultPlayerStart")
+
+[node name="Back" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("3_lmnsv")
+metadata/_edit_lock_ = true
+
+[node name="Navigation" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("4_wpnf2")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("5_5gkwj")]
+position = Vector2(217, 126)
+
+[node name="Front" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("6_dv3mf")
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(8, 2)
+navigation_polygon = SubResource("NavigationPolygon_lcdph")
+metadata/_edit_lock_ = true
+
+[node name="DefaultPlayerStart" type="Node2D" parent="."]
+position = Vector2(77, 161)
+script = ExtResource("7_mashp")
+
+[node name="PlaygroundPlayerStart" type="Node2D" parent="."]
+position = Vector2(191, 158)
+script = ExtResource("7_mashp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 1, 1)

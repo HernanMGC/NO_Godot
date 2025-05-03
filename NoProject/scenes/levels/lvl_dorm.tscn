@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://csmlin3eq0yat"]
+[gd_scene load_steps=12 format=3 uid="uid://csmlin3eq0yat"]
 
 [ext_resource type="Script" uid="uid://jc65hrxwmmcj" path="res://godot_scripts/levels/level.gd" id="1_472cr"]
 [ext_resource type="Script" uid="uid://bng36of51xalg" path="res://godot_scripts/player_starts/player_start_definition.gd" id="2_ey8dl"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://j1en5uoxnnr5" path="res://resources/sprites/backgrounds/dorm/s_dorm_walkable.png" id="4_6nta6"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://scenes/characters/player/player_character.tscn" id="5_5v362"]
 [ext_resource type="Texture2D" uid="uid://ddnk5v7bq867q" path="res://resources/sprites/backgrounds/dorm/s_dorm_front.png" id="6_k5wvg"]
-[ext_resource type="Script" uid="uid://c7oqhs17beknb" path="res://godot_scripts/interactions/abs_interaction.gd" id="8_6mijw"]
-[ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://scenes/interactuable/interactuable.tscn" id="10_p71a4"]
-[ext_resource type="Resource" uid="uid://ds8sd8odretiu" path="res://resources/godot_resources/interactions/travel_maps/travel_map_playground.tres" id="11_qtcnp"]
+[ext_resource type="PackedScene" uid="uid://cox4e7cm6wqfg" path="res://scenes/interactuable/travel_dorm_to_kitchen.tscn" id="8_dpimv"]
+[ext_resource type="PackedScene" uid="uid://betb38jlqqycn" path="res://scenes/interactuable/dialogue_dorm_intro.tscn" id="9_qha5q"]
 [ext_resource type="Script" uid="uid://b7gdbrqgx0ev2" path="res://godot_scripts/player_starts/player_start.gd" id="12_gbkpb"]
 
 [sub_resource type="Resource" id="Resource_sexu2"]
@@ -23,8 +22,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(30, 160, 14, 178, 267, 
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 1.0
 
-[node name="LVL_Dorm" type="Node" node_paths=PackedStringArray("default_player_start") groups=["level"]]
+[node name="LVL_Dorm" type="Node" node_paths=PackedStringArray("startup_interactuables", "default_player_start") groups=["level"]]
 script = ExtResource("1_472cr")
+startup_interactuables = [NodePath("DialogueDormIntro")]
 player_start_definitions = Array[ExtResource("2_ey8dl")]([SubResource("Resource_sexu2")])
 default_player_start = NodePath("DefaultPlayerStart")
 
@@ -54,10 +54,6 @@ position = Vector2(8, 2)
 navigation_polygon = SubResource("NavigationPolygon_lcdph")
 metadata/_edit_lock_ = true
 
-[node name="TravelMap" parent="." instance=ExtResource("10_p71a4")]
-position = Vector2(135, 134)
-interactions = Array[ExtResource("8_6mijw")]([ExtResource("11_qtcnp")])
-
 [node name="DefaultPlayerStart" type="Node2D" parent="."]
 position = Vector2(77, 161)
 script = ExtResource("12_gbkpb")
@@ -65,3 +61,9 @@ script = ExtResource("12_gbkpb")
 [node name="PlaygroundPlayerStart" type="Node2D" parent="."]
 position = Vector2(191, 158)
 script = ExtResource("12_gbkpb")
+
+[node name="TravelMapDormToKitchen" parent="." instance=ExtResource("8_dpimv")]
+position = Vector2(10, 63)
+exp_relative_goto_location = Vector2(48, 97)
+
+[node name="DialogueDormIntro" parent="." instance=ExtResource("9_qha5q")]

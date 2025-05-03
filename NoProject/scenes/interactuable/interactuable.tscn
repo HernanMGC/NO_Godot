@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3qqb3uiwa5nb" path="res://developers/placeholders/resources/sprites/interactuables/ph_s_interactuable_go_to_position.png" id="3_yf03t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52k67"]
-size = Vector2(23, 30)
+size = Vector2(46, 108)
 
 [node name="Interactuable" type="Area2D" groups=["persist"]]
 script = ExtResource("1_6ipau")

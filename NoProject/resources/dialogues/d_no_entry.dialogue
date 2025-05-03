@@ -1,21 +1,19 @@
 ~ this_is_a_node_title
-Nathan: HI.
-Nathan: HI2.
-
 #if GameStateScene.inventory.is_empty()
 #	Nathan: inventory empty.
 #else
 #	Nathan: inventory NOT empty.
 ##	
-#Narrador: Esto es un prototipo de diálogo para el juego NO.
-#Narrador: Este NO es, en definitiva, un Prototipo..
-#Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.
-#- Tegucigalpa
-#	...: Tegucigalpa.
-#Narrador: Vale no sé si te acuerdas de aquel día
-#Narrador: pero tú estabas sobadísimo 
-#Narrador: y tu madre entró en el cuarto acompañada de demasiada luz 
-#Narrador: para decirte que te pusieras las pilitas y salieses de la cama.
+Narrador: Esto es un prototipo de diálogo para el juego NO.
+Narrador: Este NO es, en definitiva, un Prototipo..
+Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.
+- Tegucigalpa
+	...: Tegucigalpa.
+Narrador: Vale no sé si te acuerdas de aquel día
+Narrador: pero tú estabas sobadísimo 
+Narrador: y tu madre entró en el cuarto acompañada de demasiada luz 
+Narrador: para decirte que te pusieras las pilitas y salieses de la cama.
+Madre: Ya salió el sol, bichito. Venga a agarrar al mundo por la solapa.
 #- Salí de la cama
 #	Narrador: Te derramaste como un líquido negro por el borde del catre,
 #	Narrador: arrastrando contigo la ropa que llevabas anteayer.

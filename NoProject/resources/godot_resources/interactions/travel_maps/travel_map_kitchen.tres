@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Interaction_TravelMap" load_steps=2 format=3 uid="uid://3h3ovm8qk3do"]
+
+[ext_resource type="Script" uid="uid://4t41j7ahqhqa" path="res://godot_scripts/interactions/interaction_travel_map.gd" id="1_thuuy"]
+
+[resource]
+script = ExtResource("1_thuuy")
+map_to_travel_path = "res://scenes/levels/lvl_kitchen.tscn"
