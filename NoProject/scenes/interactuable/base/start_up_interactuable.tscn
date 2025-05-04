@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://oke068mv5jwk"]
 
-[ext_resource type="Script" uid="uid://chdregxwpv1mr" path="res://godot_scripts/interactuables/start_up_interactuable.gd" id="1_1y5yd"]
+[ext_resource type="Script" uid="uid://chdregxwpv1mr" path="res://godot_scripts/interactuables/start_up_interactuable.gd" id="1_ac1j1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52k67"]
 size = Vector2(23, 30)
 
 [node name="StartUpInteractuable" type="Area2D" groups=["persist"]]
-script = ExtResource("1_1y5yd")
+script = ExtResource("1_ac1j1")
 
 [node name="InteractuableSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

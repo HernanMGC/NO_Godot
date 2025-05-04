@@ -4,6 +4,8 @@
 #else
 #	Nathan: inventory NOT empty.
 ##	
+do execute_dialogue_action("mother_appears")
+
 Narrador: Esto es un prototipo de diálogo para el juego NO.
 Narrador: Este NO es, en definitiva, un Prototipo..
 Narrador: Para continuar, haz click en un lugar que te voy a decir ahora.

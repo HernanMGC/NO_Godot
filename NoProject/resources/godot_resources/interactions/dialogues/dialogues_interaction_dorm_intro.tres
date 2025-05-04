@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Interaction_Dialogue" load_steps=7 format=3 uid="uid://k1vhst21ge8w"]
+
+[ext_resource type="Script" uid="uid://cqnmqqjeip7oa" path="res://godot_scripts/interactions/dialogues/dialogue_actions/abs_dialogue_action_resource.gd" id="1_c2q86"]
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_p4xsh"]
+[ext_resource type="Resource" uid="uid://qgk067j41xwd" path="res://resources/dialogues/d_no_entry.dialogue" id="1_p54cq"]
+[ext_resource type="Script" uid="uid://l0mwvp7vt6bo" path="res://godot_scripts/interactions/dialogues/dialogue_actions/play_animation_dialogue_action.gd" id="2_gukjn"]
+[ext_resource type="Script" uid="uid://cdlwatljy32vr" path="res://godot_scripts/interactions/dialogues/interaction_dialogue.gd" id="2_mjs80"]
+
+[sub_resource type="Resource" id="Resource_wysnl"]
+script = ExtResource("2_gukjn")
+node_path = NodePath("../MotherNpcCharacter")
+animation_name = "appear_door"
+metadata/_custom_type_script = "uid://l0mwvp7vt6bo"
+
+[resource]
+script = ExtResource("2_mjs80")
+dialogues = Array[ExtResource("1_p4xsh")]([ExtResource("1_p54cq")])
+dialogue_actions = Dictionary[String, ExtResource("1_c2q86")]({
+"mother_appears": SubResource("Resource_wysnl")
+})

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://csmlin3eq0yat"]
+[gd_scene load_steps=13 format=3 uid="uid://csmlin3eq0yat"]
 
 [ext_resource type="Script" uid="uid://jc65hrxwmmcj" path="res://godot_scripts/levels/level.gd" id="1_472cr"]
 [ext_resource type="Script" uid="uid://bng36of51xalg" path="res://godot_scripts/player_starts/player_start_definition.gd" id="2_ey8dl"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://j1en5uoxnnr5" path="res://resources/sprites/backgrounds/dorm/s_dorm_walkable.png" id="4_6nta6"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://scenes/characters/player/player_character.tscn" id="5_5v362"]
 [ext_resource type="Texture2D" uid="uid://ddnk5v7bq867q" path="res://resources/sprites/backgrounds/dorm/s_dorm_front.png" id="6_k5wvg"]
-[ext_resource type="PackedScene" uid="uid://cox4e7cm6wqfg" path="res://scenes/interactuable/travel_dorm_to_kitchen.tscn" id="8_dpimv"]
-[ext_resource type="PackedScene" uid="uid://betb38jlqqycn" path="res://scenes/interactuable/dialogue_dorm_intro.tscn" id="9_qha5q"]
+[ext_resource type="PackedScene" uid="uid://cox4e7cm6wqfg" path="res://scenes/interactuable/travelmap/travelmap_dorm_to_kitchen.tscn" id="8_dpimv"]
+[ext_resource type="PackedScene" uid="uid://betb38jlqqycn" path="res://scenes/interactuable/dialogue/dialogue_dorm_intro.tscn" id="9_qha5q"]
+[ext_resource type="PackedScene" uid="uid://bn5giyy7pte2l" path="res://scenes/characters/npc/npc_character.tscn" id="10_el8mt"]
 [ext_resource type="Script" uid="uid://b7gdbrqgx0ev2" path="res://godot_scripts/player_starts/player_start.gd" id="12_gbkpb"]
 
 [sub_resource type="Resource" id="Resource_sexu2"]
@@ -62,8 +63,11 @@ script = ExtResource("12_gbkpb")
 position = Vector2(191, 158)
 script = ExtResource("12_gbkpb")
 
-[node name="TravelMapDormToKitchen" parent="." instance=ExtResource("8_dpimv")]
+[node name="TravemapDormToKitchen" parent="." instance=ExtResource("8_dpimv")]
 position = Vector2(10, 63)
 exp_relative_goto_location = Vector2(48, 97)
 
 [node name="DialogueDormIntro" parent="." instance=ExtResource("9_qha5q")]
+
+[node name="MotherNpcCharacter" parent="." instance=ExtResource("10_el8mt")]
+position = Vector2(7, 100)

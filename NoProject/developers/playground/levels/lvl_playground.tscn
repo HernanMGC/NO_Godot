@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bng36of51xalg" path="res://godot_scripts/player_starts/player_start_definition.gd" id="2_epmti"]
 [ext_resource type="Texture2D" uid="uid://bh2og7248is2f" path="res://developers/placeholders/resources/sprites/checkers/ph_s_pixel_perfect_checker.png" id="3_x7bk7"]
 [ext_resource type="PackedScene" uid="uid://ch3es2wj6w86p" path="res://scenes/characters/player/player_character.tscn" id="4_jfgjs"]
-[ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://scenes/interactuable/interactuable.tscn" id="5_2w4gg"]
+[ext_resource type="PackedScene" uid="uid://nhgqrsdohibl" path="res://scenes/interactuable/base/interactuable.tscn" id="5_2w4gg"]
 [ext_resource type="Script" uid="uid://c7oqhs17beknb" path="res://godot_scripts/interactions/abs_interaction.gd" id="6_uynmu"]
 [ext_resource type="Resource" uid="uid://jeaufs4nk6y6" path="res://resources/godot_resources/interactions/travel_maps/travel_map_dorm.tres" id="7_ajyr2"]
 [ext_resource type="Resource" uid="uid://ce3cifde657d3" path="res://resources/godot_resources/interactions/picks/pick_interaction_book.tres" id="8_nen1g"]

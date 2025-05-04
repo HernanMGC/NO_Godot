@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Interaction_Pick" load_steps=4 format=3 uid="uid://ce3cifde657d3"]
 
-[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://godot_scripts/pickables/pickable_item_definition.gd" id="1_fgku0"]
-[ext_resource type="Script" uid="uid://8ynevcmlardc" path="res://godot_scripts/interactions/interaction_pick.gd" id="2_5vgfl"]
-[ext_resource type="Resource" uid="uid://1pryyw21ecau" path="res://resources/godot_resources/pickables/pickable_book_definition.tres" id="2_w2n87"]
+[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://godot_scripts/interactions/pick/pickables/pickable_item_definition.gd" id="1_fgku0"]
+[ext_resource type="Script" uid="uid://8ynevcmlardc" path="res://godot_scripts/interactions/pick/interaction_pick.gd" id="2_5vgfl"]
+[ext_resource type="Resource" uid="uid://1pryyw21ecau" path="res://resources/godot_resources/interactions/picks/pickables/pickable_book_definition.tres" id="2_w2n87"]
 
 [resource]
 script = ExtResource("2_5vgfl")

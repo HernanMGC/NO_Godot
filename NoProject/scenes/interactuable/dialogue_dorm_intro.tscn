@@ -1,8 +1,0 @@
-[gd_scene load_steps=4 format=3 uid="uid://betb38jlqqycn"]
-
-[ext_resource type="PackedScene" uid="uid://oke068mv5jwk" path="res://scenes/interactuable/start_up_interactuable.tscn" id="1_nw0yh"]
-[ext_resource type="Script" uid="uid://c7oqhs17beknb" path="res://godot_scripts/interactions/abs_interaction.gd" id="2_xpte8"]
-[ext_resource type="Resource" uid="uid://k1vhst21ge8w" path="res://resources/godot_resources/dialogues/dialogues_interaction_dorm_intro.tres" id="3_uxvdi"]
-
-[node name="dialogue_dorm_intro" instance=ExtResource("1_nw0yh")]
-interactions = Array[ExtResource("2_xpte8")]([ExtResource("3_uxvdi")])

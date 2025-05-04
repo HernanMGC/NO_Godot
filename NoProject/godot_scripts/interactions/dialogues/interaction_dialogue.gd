@@ -11,7 +11,9 @@ extends AbsInteraction
 #region EXPORT VARIABLES
 ## Dialogues resources to be launched. The orden of the array will determined the
 ## order in which they are displayed.
-@export var dialogues : Array[DialogueResource] 
+@export var dialogues : Array[DialogueResource]
+
+@export var dialogue_actions : Dictionary[String, AbsDialogueActionResource]
 #endregion EXPORT VARIABLES
 
 #region PRIVATE VARIABLES
@@ -21,6 +23,18 @@ var _current_dialogue_index : int = 0
 #endregion VARIABLES
 
 #region METHODS
+#region PUBLIC METHODS
+## Scene explicit inizialization. Set the interactuable this interation is
+## attached to.
+func initialize(new_interactuable: Interactuable) -> void:
+	super(new_interactuable)
+	for key in dialogue_actions:
+		var dialogue_action : AbsDialogueActionResource = dialogue_actions[key]
+		if dialogue_action:
+			dialogue_action.initialize(new_interactuable) 
+	return
+#region PUBLIC METHODS
+	
 #region PRIVATE METHODS
 ## OVERRIDEN TO: Starts dialogue sequence. It disables player input until 
 ## dialogues end. 
@@ -35,7 +49,7 @@ func _internal_interact() -> void:
 ## _on_dialogue_ended function.
 func _show_next_dialogue() -> void:
 	if _current_dialogue_index < dialogues.size():
-		DialogueManager.show_dialogue_balloon(dialogues[_current_dialogue_index])
+		DialogueManager.show_dialogue_balloon(dialogues[_current_dialogue_index], "", [self])
 		DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	return
 
@@ -51,5 +65,10 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	else:
 		PlayerLibFuncs.set_input_enabled(true)
 		interaction_finished.emit()
+		
+func execute_dialogue_action(action_key : String) -> void:
+	var dialogue_action : AbsDialogueActionResource = dialogue_actions[action_key]
+	if dialogue_action:
+		dialogue_action._execute_action()
 #endregion PRIVATE METHODS
 #endregion METHODS

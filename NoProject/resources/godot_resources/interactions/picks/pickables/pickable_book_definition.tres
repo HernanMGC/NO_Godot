@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://1pryyw21ecau"]
 
-[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://godot_scripts/pickables/pickable_item_definition.gd" id="1_krf7i"]
+[ext_resource type="Script" uid="uid://n8f74mdws3pv" path="res://godot_scripts/interactions/pick/pickables/pickable_item_definition.gd" id="1_krf7i"]
 [ext_resource type="Texture2D" uid="uid://b56cdxowr21sh" path="res://resources/sprites/interactuables/s_item_book.png" id="2_jlm3v"]
 
 [resource]
