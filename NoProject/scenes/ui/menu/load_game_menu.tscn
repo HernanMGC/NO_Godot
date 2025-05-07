@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0sv7wr6gisn7"]
+
+[ext_resource type="Script" uid="uid://eiwfhc4baaj6" path="res://godot_scripts/ui/menus/main_menu.gd" id="1_tqjnt"]
+[ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="2_4yaob"]
+[ext_resource type="Script" uid="uid://cw5cg6xwsv7em" path="res://godot_scripts/ui/menus/save_games_item_list.gd" id="3_4yaob"]
+
+[node name="LoadGameMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqjnt")
+new_level_path = "res://scenes/levels/lvl_dorm.tscn"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("2_4yaob")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save games slots:"
+
+[node name="SaveGamesItemList" type="ItemList" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 2
+same_column_width = true
+item_0/text = "Save slot 1"
+item_1/text = "Save slot 2"
+script = ExtResource("3_4yaob")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="LoadButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_4yaob")
+theme_type_variation = &"HighlightedButton"
+text = "Load Slot"
