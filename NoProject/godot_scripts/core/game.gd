@@ -4,6 +4,7 @@ extends Node
 ## Game Class.
 ## Handles all core game features, such as Level traveling.
 
+
 #region VARIABLES
 #region EXPORT VARIABLES
 ## Default Level Resource Paths.
@@ -20,6 +21,15 @@ var _current_from_level_path : String = ""
 ## Current load string.
 var _current_load_string : String = ""
 #endregion PRIVATE VARIABLES
+
+#region ONREADY PRIVATE VARIABLES
+## Level node path.
+@onready var level_node : Node = $Level
+
+## UI node path.
+@onready var ui_node : Node = $UI
+#endregion ONREADY PRIVATE VARIABLES
+
 #endregion VARIABLES
 
 #region METHODS
@@ -36,11 +46,11 @@ func travel_to_level(from_level_path : String, new_level_path : String, load_str
 		return
 	
 	if _current_level:
-		get_tree().root.remove_child(_current_level)
+		level_node.remove_child(_current_level)
 	
 	var level_node_to_load : Node = level_scene_to_load.instantiate()
-	get_tree().root.child_entered_tree.connect(_add_level)
-	get_tree().root.add_child.call_deferred(level_node_to_load)
+	level_node.child_entered_tree.connect(_add_level)
+	level_node.add_child.call_deferred(level_node_to_load)
 	
 ## Returns current level.
 func get_current_level() -> Node:
@@ -58,6 +68,7 @@ func current_load_string() -> String:
 ## OVERRIDEN TO: Do the initial travel to level.
 func _ready() -> void:
 	var scene_to_load_path : String = level_scene_paths[0]
+	# TODO: Change this to alter UI instead of Level and add a way to handle UI Layers
 	travel_to_level("", scene_to_load_path, "")
 	pass
 	
@@ -67,7 +78,7 @@ func _process(_delta : float) -> void:
 ## Disconnects root's child_entererd_tree from add_level and setup tha Player's
 ## Position according to the level needs by passing current_from_level_path.
 func _add_level(level_node_to_load : Node) -> void:
-	get_tree().root.child_entered_tree.disconnect(_add_level)
+	level_node.child_entered_tree.disconnect(_add_level)
 	
 	if level_node_to_load is Level:
 		level_node_to_load.setup_player(_current_from_level_path)

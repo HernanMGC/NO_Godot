@@ -5,3 +5,7 @@
 [node name="Game" type="Node" groups=["game"]]
 script = ExtResource("1_2bsr5")
 level_scene_paths = Array[String](["res://scenes/ui/menu/main_menu.tscn", "res://developers/playground/levels/lvl_playground.tscn", "res://scenes/levels/lvl_dorm.tscn"])
+
+[node name="Level" type="Node" parent="."]
+
+[node name="UI" type="Node" parent="."]
