@@ -11,7 +11,11 @@ class_name StartUpInteractuable
 ## Finishes load.
 func _finish_loading() -> void:
 	super()
-	var current_level : Node = get_node(NodePath(String("/root/" + Game.static_get_current_level().name)))
+	if !Game.static_get_current_level():
+		return
+	
+	var node_path = NodePath(String("/root/" + Game.static_get_current_level().name))
+	var current_level : Node = get_node(node_path)
 	if current_level as Level:
 		current_level.startup_interactuables.append(self)
 #region PRIVATE METHODS

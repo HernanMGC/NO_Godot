@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0sv7wr6gisn7"]
 
-[ext_resource type="Script" uid="uid://eiwfhc4baaj6" path="res://godot_scripts/ui/menus/main_menu.gd" id="1_tqjnt"]
+[ext_resource type="Script" uid="uid://diqvnbi1rugfl" path="res://godot_scripts/ui/ui_screen.gd" id="1_4yaob"]
 [ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="2_4yaob"]
 [ext_resource type="Script" uid="uid://cw5cg6xwsv7em" path="res://godot_scripts/ui/menus/save_games_item_list.gd" id="3_4yaob"]
 
@@ -10,8 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tqjnt")
-new_level_path = "res://scenes/levels/lvl_dorm.tscn"
+script = ExtResource("1_4yaob")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(150, 0)

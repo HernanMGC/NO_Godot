@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://chj8g0hn8dr0n"]
+
+[ext_resource type="Script" uid="uid://diqvnbi1rugfl" path="res://godot_scripts/ui/ui_screen.gd" id="1_rh0al"]
+
+[node name="UIScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rh0al")
+
+[node name="LayerLink" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

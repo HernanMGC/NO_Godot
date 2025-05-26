@@ -1,6 +1,7 @@
-extends CenterContainer
+class_name MainMenuUIScreen
+extends Control
 
-## Main menu Class.
+## Main Menu UI screen Class.
 ## Show buttons for new, load, and continue game.
 
 #region CONSTANTS

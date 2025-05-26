@@ -24,7 +24,7 @@ enum DEBUG_LEVEL {
 
 #region PRIVATE VARIABLES
 ## Default debug level.
-var _default_debug_level = DEBUG_LEVEL.ERROR
+# var _default_debug_level = DEBUG_LEVEL.ERROR
 
 ## Current debug level.
 var _current_debug_level = DEBUG_LEVEL.ERROR

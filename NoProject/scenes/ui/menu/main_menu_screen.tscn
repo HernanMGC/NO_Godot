@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5s0o2yl41t2p"]
+
+[ext_resource type="PackedScene" uid="uid://chj8g0hn8dr0n" path="res://scenes/ui/ui_screen.tscn" id="1_pkx7w"]
+[ext_resource type="Script" uid="uid://eiwfhc4baaj6" path="res://godot_scripts/ui/menus/main_menu.gd" id="2_h36oa"]
+[ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="2_piybp"]
+
+[node name="UIScreen" instance=ExtResource("1_pkx7w")]
+
+[node name="CenterContainer" type="CenterContainer" parent="Content" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_h36oa")
+new_level_path = "res://scenes/levels/lvl_dorm.tscn"
+
+[node name="PanelContainer" type="PanelContainer" parent="Content/CenterContainer" index="0"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("2_piybp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/CenterContainer/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "NO"
+
+[node name="NewGameButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_type_variation = &"NewGameButton"
+text = "NO-eva partida"
+
+[node name="ContinueButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Conti-NO-ar"
+
+[node name="LoadGameButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="3"]
+layout_mode = 2
+text = "Cargar partida
+"
+
+[node name="CreditsButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="4"]
+layout_mode = 2
+text = "Creditos
+"
+
+[node name="ExitButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="5"]
+layout_mode = 2
+text = "NO"
+
+[connection signal="pressed" from="Content/CenterContainer/PanelContainer/VBoxContainer/NewGameButton" to="Content/CenterContainer" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Content/CenterContainer/PanelContainer/VBoxContainer/ContinueButton" to="Content/CenterContainer" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Content/CenterContainer/PanelContainer/VBoxContainer/LoadGameButton" to="Content/CenterContainer" method="_on_load_game_button_pressed"]

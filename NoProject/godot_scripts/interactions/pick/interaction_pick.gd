@@ -28,7 +28,7 @@ func _internal_interact() -> void:
 		DebugManager.print_debug_line(DebugManager.DEBUG_LEVEL.INFO, pickable.to_string())
 		PlayerLibFuncs.add_item_to_inventory(pickable)
 	
-	interaction_finished.emit()
+	emit_interaction_finished()
 	
 	if destroy_interactuable_on_interact && interactuable:
 		_can_interact = false

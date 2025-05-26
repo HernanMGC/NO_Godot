@@ -82,6 +82,11 @@ func get_relative_goto_location() -> Vector2:
 func hide_interactuable() -> void:
 	hide()
 	_marked_to_be_destroyed = true
+	
+	
+## Emit signal for all interaction finished.
+func emit_all_interaction_finished() -> void:
+	all_interaction_finished.emit()
 #endregion PUBLIC METHODS
 
 #region PRIVATE METHODS
@@ -134,7 +139,7 @@ func _on_interaction_finished() -> void:
 	else:
 		_current_interaction_index = 0
 		_current_interaction = null
-		all_interaction_finished.emit()
+		emit_all_interaction_finished()
 		
 		await get_tree().create_timer(_time_to_enable_input).timeout
 		PlayerLibFuncs.set_input_enabled(true)

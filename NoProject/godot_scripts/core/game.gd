@@ -59,6 +59,18 @@ func get_current_level() -> Node:
 ## Returns current load string.
 func current_load_string() -> String:
 	return _current_load_string
+
+## Load UIs.
+func load_ui(_level_path : String, ui_scenes : Array[String]) -> void:
+	var ui_node_children = ui_node.get_children()
+	for ui_child in ui_node_children:
+		ui_child.free()
+		
+	for ui_screen in ui_scenes:
+		var ui_screen_to_load : PackedScene = load(ui_screen)
+		var ui_node_to_load : Node = ui_screen_to_load.instantiate()
+		ui_node.add_child(ui_node_to_load)
+	pass
 #endregion PUBLIC METHODS
 
 #endregion PRIVATE METHODS
@@ -91,7 +103,7 @@ func _add_level(level_node_to_load : Node) -> void:
 static func static_get_current_level() -> Node:
 	var mainLoop = Engine.get_main_loop()
 	var sceneTree = mainLoop as SceneTree;
-	var root = sceneTree.root.get_node("Game")
+	var root = sceneTree.root.get_node("Game/Level")
 	if (root as Game):
 		return root.get_current_level()
 	else:

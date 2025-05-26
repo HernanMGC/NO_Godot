@@ -64,7 +64,7 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 		_show_next_dialogue()
 	else:
 		PlayerLibFuncs.set_input_enabled(true)
-		interaction_finished.emit()
+		emit_interaction_finished()
 		
 func execute_dialogue_action(action_key : String) -> void:
 	var dialogue_action : AbsDialogueActionResource = dialogue_actions[action_key]

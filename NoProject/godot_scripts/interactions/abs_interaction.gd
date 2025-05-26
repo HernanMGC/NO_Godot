@@ -39,10 +39,13 @@ func _interact() -> void:
 	if _can_interact:
 		_internal_interact()
 	return
+	
+## Emit signal for interaction finished.
+func emit_interaction_finished() -> void:
+	interaction_finished.emit()
 #endregion PUBLIC METHODS
 
 #region PRIVATE METHODS
-
 ## TODO: Complete implementation
 ## Base condition met check function. It is NOT meant to be overriden. It will evaluate conditions
 ## and return if interaction is able to be performed.

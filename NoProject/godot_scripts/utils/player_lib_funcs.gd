@@ -11,6 +11,10 @@ func set_input_enabled(new_input_enabled : bool) -> void:
 func travel_to_level(from_level_path : String, new_level_path : String, load_string : String) -> void:
 	get_tree().call_group("game", "travel_to_level", from_level_path, new_level_path, load_string)
 
+## Call travel_to_level function on game. 
+func load_ui(level_path : String, ui_scenes : Array[String]) -> void:
+	get_tree().call_group("game", "load_ui", level_path, ui_scenes)
+
 ## Call add_item_to_inventory function on gamestate. 
 func add_item_to_inventory(pickable : PickableItemDefinition) -> void:
 	get_tree().call_group("gamestate", "add_item_to_inventory", pickable)

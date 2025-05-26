@@ -20,6 +20,12 @@ signal all_startup_interactuables_finished
 ## Default Player Starts if came-from leven is not found on 
 ## player_start_definitions.
 @export var default_player_start : PlayerStart
+
+## List UI screens related to the level that need to be added.
+@export var ui_screens_to_add : Array[String]
+
+## Is game saving enabled for the level.
+@export var save_game_enabled = true
 #endregion EXPORT VARIABLES
 
 #region PRIVATE VARIABLES
@@ -50,8 +56,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_move_player()
 	_launch_startup_interactuables()
+	PlayerLibFuncs.load_ui(Game.static_get_current_load_string(), ui_screens_to_add)
 	
-	GamePersistencySystem.save_game()
+	if save_game_enabled:
+		GamePersistencySystem.save_game()
 
 ## Launches first startup interactions.
 func _launch_startup_interactuables() -> void:
