@@ -30,7 +30,7 @@ func initialize(new_interactuable: Interactuable) -> void:
 	super(new_interactuable)
 	for key in dialogue_actions:
 		var dialogue_action : AbsDialogueActionResource = dialogue_actions[key]
-		if dialogue_action:
+		if dialogue_action is AbsDialogueActionResource:
 			dialogue_action.initialize(new_interactuable) 
 	return
 #region PUBLIC METHODS
