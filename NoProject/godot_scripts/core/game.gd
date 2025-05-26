@@ -20,6 +20,9 @@ var _current_from_level_path : String = ""
 
 ## Current load string.
 var _current_load_string : String = ""
+
+## Current active UI screen.
+var _current_ui_screen : UIScreen
 #endregion PRIVATE VARIABLES
 
 #region ONREADY PRIVATE VARIABLES
@@ -29,7 +32,6 @@ var _current_load_string : String = ""
 ## UI node path.
 @onready var ui_node : Node = $UI
 #endregion ONREADY PRIVATE VARIABLES
-
 #endregion VARIABLES
 
 #region METHODS
@@ -61,16 +63,49 @@ func current_load_string() -> String:
 	return _current_load_string
 
 ## Load UIs.
-func load_ui(_level_path : String, ui_scenes : Array[String]) -> void:
+func load_ui(_level_path : String, ui_scene : String) -> void:
 	var ui_node_children = ui_node.get_children()
 	for ui_child in ui_node_children:
-		ui_child.free()
+		ui_child.queue_free()
+	
+	_current_ui_screen = null
+	
+	var ui_screen_to_load : PackedScene = load(ui_scene)
+	if !ui_screen_to_load:
+		return
 		
-	for ui_screen in ui_scenes:
-		var ui_screen_to_load : PackedScene = load(ui_screen)
-		var ui_node_to_load : Node = ui_screen_to_load.instantiate()
-		ui_node.add_child(ui_node_to_load)
+	var ui_node_to_load : Node = ui_screen_to_load.instantiate()
+	ui_node.add_child(ui_node_to_load)
+	_current_ui_screen = ui_node_to_load
 	pass
+	
+## Remove current UI and show parent UI.
+func pop_ui() -> void:
+	var tmp_current_ui_screen = _current_ui_screen
+	if tmp_current_ui_screen.get_parent_ui() && tmp_current_ui_screen.get_parent_ui() is UIScreen:
+		tmp_current_ui_screen.get_parent_ui().pop_ui()
+		_current_ui_screen = tmp_current_ui_screen.get_parent_ui()
+	else:
+		var ui_node_children = ui_node.get_children()
+		for ui_child in ui_node_children:
+			ui_child.free()
+		_current_ui_screen = null
+	
+## Push UI and hide parent UI.
+func push_ui(screen_ui_res_path : String) -> void:
+	var ui_screen_to_load : PackedScene = load(screen_ui_res_path)
+	if !ui_screen_to_load:
+		return
+		
+	var ui_node_to_load : Node = ui_screen_to_load.instantiate()
+	
+	if _current_ui_screen && _current_ui_screen is UIScreen:
+		_current_ui_screen.push_ui(ui_node_to_load)
+	else:
+		ui_node.add_child(ui_node_to_load)
+	
+	_current_ui_screen = ui_node_to_load
+		
 #endregion PUBLIC METHODS
 
 #endregion PRIVATE METHODS

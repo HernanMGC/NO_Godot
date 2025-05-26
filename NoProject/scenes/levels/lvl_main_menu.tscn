@@ -4,6 +4,6 @@
 
 [node name="LvlMainMenu" type="Node"]
 script = ExtResource("1_4iksr")
-ui_screens_to_add = Array[String](["res://scenes/ui/menu/main_menu_screen.tscn"])
+ui_screen_to_add = "C:/Users/ERR_NaN/Documents/GodotProjects/NO/NO_Godot/NoProject/scenes/ui/menu/main_menu_screen.tscn"
 save_game_enabled = false
 metadata/_custom_type_script = "uid://jc65hrxwmmcj"

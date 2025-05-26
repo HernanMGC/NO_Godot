@@ -13,6 +13,9 @@ const SAVE_FILE_STR : String = "user://saveslots.save"
 #region EXPORT VARIABLES
 ## New level path.
 @export var new_level_path : String = ""
+
+## Load UI scene path.
+@export var load_game_ui_path : String = ""
 #endregion EXPORT VARIABLES
 #endregion VARIABLES
 
@@ -37,9 +40,9 @@ func _on_continue_button_pressed():
 	if slotlists_data.has("last_slot"):
 		PlayerLibFuncs.travel_to_level("", slotlists_data["slot_list"][slotlists_data["last_slot"]]["current_level"], slotlists_data["last_slot"])
 	pass 
-#region PRIVATE METHODS
-#region METHODS
-
+	
 func _on_load_game_button_pressed() -> void:
-	#PlayerLibFuncs.travel_to_level("", new_level_path, tmp_new_level_name)
+	PlayerLibFuncs.push_ui(load_game_ui_path)
 	pass # Replace with function body.
+#endregion PRIVATE METHODS
+#endregion METHODS

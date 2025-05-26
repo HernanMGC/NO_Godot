@@ -1,30 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0sv7wr6gisn7"]
+[gd_scene load_steps=5 format=3 uid="uid://fjgahf0ej7gl"]
 
-[ext_resource type="Script" uid="uid://diqvnbi1rugfl" path="res://godot_scripts/ui/ui_screen.gd" id="1_4yaob"]
+[ext_resource type="Script" uid="uid://bpod6lgwxrsy6" path="res://godot_scripts/ui/menus/load_game_menu.gd" id="1_4yaob"]
+[ext_resource type="PackedScene" uid="uid://chj8g0hn8dr0n" path="res://scenes/ui/ui_screen.tscn" id="1_ubs7f"]
 [ext_resource type="Theme" uid="uid://dpewmf8wtny5p" path="res://resources/themes/ui/theme_no.tres" id="2_4yaob"]
 [ext_resource type="Script" uid="uid://cw5cg6xwsv7em" path="res://godot_scripts/ui/menus/save_games_item_list.gd" id="3_4yaob"]
 
-[node name="LoadGameMenu" type="CenterContainer"]
+[node name="UIScreen" instance=ExtResource("1_ubs7f")]
+script = ExtResource("1_4yaob")
+
+[node name="CenterContainer" type="CenterContainer" parent="Content" index="0"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4yaob")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="Content/CenterContainer" index="0"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme = ExtResource("2_4yaob")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/CenterContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="0"]
 layout_mode = 2
 text = "Save games slots:"
 
-[node name="SaveGamesItemList" type="ItemList" parent="PanelContainer/VBoxContainer"]
+[node name="SaveGamesItemList" type="ItemList" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
@@ -34,17 +38,19 @@ item_0/text = "Save slot 1"
 item_1/text = "Save slot 2"
 script = ExtResource("3_4yaob")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/CenterContainer/PanelContainer/VBoxContainer" index="2"]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
 
-[node name="LoadButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="LoadButton" type="Button" parent="Content/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_4yaob")
 theme_type_variation = &"HighlightedButton"
 text = "Load Slot"
+
+[connection signal="pressed" from="Content/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

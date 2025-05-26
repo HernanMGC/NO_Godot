@@ -12,9 +12,17 @@ func travel_to_level(from_level_path : String, new_level_path : String, load_str
 	get_tree().call_group("game", "travel_to_level", from_level_path, new_level_path, load_string)
 
 ## Call travel_to_level function on game. 
-func load_ui(level_path : String, ui_scenes : Array[String]) -> void:
-	get_tree().call_group("game", "load_ui", level_path, ui_scenes)
+func load_ui(level_path : String, ui_scene : String) -> void:
+	get_tree().call_group("game", "load_ui", level_path, ui_scene)
 
+## Call push_ui function on game. 
+func push_ui(screen_ui_res_path : String) -> void:
+	get_tree().call_group("game", "push_ui", screen_ui_res_path)
+
+## Call pop_ui function on game. 
+func  pop_ui() -> void:
+	get_tree().call_group("game", "pop_ui")
+	
 ## Call add_item_to_inventory function on gamestate. 
 func add_item_to_inventory(pickable : PickableItemDefinition) -> void:
 	get_tree().call_group("gamestate", "add_item_to_inventory", pickable)

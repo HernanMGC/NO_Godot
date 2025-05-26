@@ -21,8 +21,8 @@ signal all_startup_interactuables_finished
 ## player_start_definitions.
 @export var default_player_start : PlayerStart
 
-## List UI screens related to the level that need to be added.
-@export var ui_screens_to_add : Array[String]
+## UI screen related to the level that need to be added.
+@export var ui_screen_to_add : String = ""
 
 ## Is game saving enabled for the level.
 @export var save_game_enabled = true
@@ -56,7 +56,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_move_player()
 	_launch_startup_interactuables()
-	PlayerLibFuncs.load_ui(Game.static_get_current_load_string(), ui_screens_to_add)
+	PlayerLibFuncs.load_ui(Game.static_get_current_load_string(), ui_screen_to_add)
 	
 	if save_game_enabled:
 		GamePersistencySystem.save_game()
